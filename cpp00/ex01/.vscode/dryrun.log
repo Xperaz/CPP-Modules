@@ -1,0 +1,7 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/aouhadou/Desktop/cpp00/ex01'
+ 
+make: *** No rule to make target `utils.cpp', needed by `PhoneBook'.
+
+make: Leaving directory `/Users/aouhadou/Desktop/cpp00/ex01'
+ 

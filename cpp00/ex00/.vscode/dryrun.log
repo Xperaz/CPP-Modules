@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/aouhadou/Desktop/cpp00/ex00'
+g++ -std=c++98 -Wall -Wextra -Werror  -c mega.cpp
+g++ -std=c++98 -Wall -Wextra -Werror mega.o -o megaphone
+make: Leaving directory `/Users/aouhadou/Desktop/cpp00/ex00'
+ 
