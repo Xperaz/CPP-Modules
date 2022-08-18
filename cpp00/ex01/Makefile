@@ -6,26 +6,26 @@
 #    By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 12:53:03 by aouhadou          #+#    #+#              #
-#    Updated: 2022/08/17 13:05:59 by aouhadou         ###   ########.fr        #
+#    Updated: 2022/08/18 10:51:53 by aouhadou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-HEADER = PhoneBook.hpp
+HEADER = PhoneBook.hpp contact.hpp\
 
-CC = g++
+CC = clang++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 
 
-SRC = PhoneBook.cpp utils.cpp\
+SRC = PhoneBook.cpp contact.cpp\
 
 NAME = PhoneBook
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADER)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 		
 %.o: %.cpp ${HEADER}
 	$(CC) $(CFLAGS) -c $<

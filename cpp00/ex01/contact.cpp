@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 13:04:49 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/08/17 13:05:44 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/08/18 11:03:22 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 bool isNumber(std::string str)
-{
+{  
     int i;
 
     i = 0;
@@ -116,3 +116,7 @@ Contact *getContact(Contact   *contacts)
     contacts->setFull(info.Full);
     return (contacts);
 }
+
+Contact::Contact(){}
+
+Contact::~Contact(){}

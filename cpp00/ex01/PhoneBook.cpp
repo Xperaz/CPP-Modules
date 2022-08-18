@@ -6,11 +6,37 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 12:52:17 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/08/17 13:05:39 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/08/18 11:03:42 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+int	ft_atoi(std::string  str)
+{
+	int	i;
+	int	sign;
+	int	nb;
+
+	i = 0;
+	sign = 1;
+	nb = 0;
+	while (str[i] == ' ' || str[i] == '\f' || str[i] == '\n'
+		|| str[i] == '\r' || str[i] == '\t' || str[i] == '\v')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign = -sign;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nb = (nb * 10) + (str[i] - '0');
+		i++;
+	}	
+	return (nb * sign);
+}
 
 int ft_search(PhoneBook *contacts, std::size_t len)
 {
@@ -22,7 +48,7 @@ int ft_search(PhoneBook *contacts, std::size_t len)
     std::cin >> user;
     if (isNumber(user))
     {
-        int num = std::stoi(user);
+        int num = ft_atoi(user);
         if (num > 8 || num < 0)
             return (-2);
         else
@@ -59,6 +85,10 @@ void    call_search(int len, PhoneBook contacts, int *i)
     else
         std::cout << indx << "| "<< contacts.str[indx] << std::endl;
 }
+
+PhoneBook::PhoneBook(){}
+
+PhoneBook::~PhoneBook(){}
 
 int main()
 {
