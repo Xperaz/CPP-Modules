@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 15:53:43 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/06 13:51:17 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/06 14:32:28 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ char    *get_name(char   *name)
         i++;
     char    *rep = new char[i];
     rep[i] = '\0';
-    std::memcpy(rep, name, i);
+    std::string str(name);
+    str.copy(rep, i);
     return(rep);
 }
 

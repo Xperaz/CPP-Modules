@@ -1,0 +1,5 @@
+STEP 1-Naming a file
+STEP 2-Opening a file
+STEP 3-Writing data into the file
+STEP 4-Reading data from the file
+STEP 5-Closing a file.
