@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 12:24:30 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/05 13:50:05 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/05 16:37:19 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,6 @@
 
 HumanB::HumanB(std::string  name)
 {
-    if (!name.empty())
-    {
-        std::cout << "\n\n !!!!!!!!!    Name can't be NULL   !!!!!!!" << std::endl;
-        exit(0);
-    }
     _name = name;
 }
 
@@ -29,7 +24,10 @@ HumanB::~HumanB()
 
 void    HumanB::attack()
 {
-    std::cout << this->_name <<  " attacks with their " << this->_weapon->getType()<< std::endl;
+    if (this->_weapon)
+        std::cout << this->_name <<  " attacks with their " << this->_weapon->getType()<< std::endl;
+    else
+        std::cout << this->_name <<  " can't attacks " << std::endl;
 }
 
 void HumanB::setWeapon(Weapon wpn)

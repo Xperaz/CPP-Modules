@@ -6,13 +6,11 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 15:53:43 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/06 14:32:28 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/06 14:45:05 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sed.hpp"
-#include <string.h>
-
 
 char    *get_name(char   *name)
 {
@@ -28,16 +26,14 @@ char    *get_name(char   *name)
     return(rep);
 }
 
-void find_and_replace(
-    std::string& s,
-    std::string const& toReplace,
+void find_and_replace(std::string& s, std::string const& toReplace,
     std::string const& replaceWith
-) {
+)
+{
     std::string buf;
     std::size_t pos = 0;
     std::size_t prevPos;
 
-    // Reserves rough estimate of final size of string.
     buf.reserve(s.size());
 
     while (true) {

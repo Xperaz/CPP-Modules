@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sed.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 15:54:06 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/06 14:43:06 by aouhadou         ###   ########.fr       */
+/*   Created: 2022/10/06 15:16:40 by aouhadou          #+#    #+#             */
+/*   Updated: 2022/10/06 17:59:58 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SED_HPP
-# define SED_HPP
+#include "Harl.hpp"
 
-#include <iostream>
-#include <cstring>
-#include <fstream>
+int main()
+{
+    Harl obj;
 
-#endif
+    obj.complain("WARNING");
+    return (0);
+}
+

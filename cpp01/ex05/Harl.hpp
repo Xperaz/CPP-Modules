@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sed.cpp                                            :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 11:04:07 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/06 13:20:25 by aouhadou         ###   ########.fr       */
+/*   Created: 2022/10/06 15:14:21 by aouhadou          #+#    #+#             */
+/*   Updated: 2022/10/06 17:36:14 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sed.hpp"
+#ifndef HARL_HPP
+#define HARL_HPP
 
-sed::sed()
+#include <iostream>
+class Harl
 {
-}
+private:
+    void    debug(void);
+    void    info(void);
+    void    warning(void);
+    void    error(void);
+public:
+   void complain(std::string level);
+    Harl(/* args */);
+    ~Harl();
+};
 
-// std::string sed::read_file(char *file)
-// {
-//      std::ofstream file_obj;
-
-//      file_obj.open(file, ios::in);
-//      file_obj.()
-// }
-
-sed::~sed()
-{
-}
+#endif

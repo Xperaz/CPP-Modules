@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 12:39:56 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/03 13:04:03 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/05 15:18:15 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 
 Zombie *Zombie::zombieHorde(int N, std::string name)
 {
-    Zombie *zmb = new Zombie[N];
+    Zombie *zmb;
+    int     i;
     
-    int i = 0;
+    zmb = new Zombie[N];
+    if (!zmb)
+        return (NULL);
+    i = 0;
     while (i < N)
     {
         zmb[i]._name = name;
