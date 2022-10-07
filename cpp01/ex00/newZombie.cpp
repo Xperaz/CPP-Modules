@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 12:39:56 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/03 11:09:06 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/07 09:15:45 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,7 @@
 Zombie *Zombie::newZombie(std::string name)
 {
     Zombie *zmb = new Zombie(name);
+    if (!zmb)
+        return (NULL);
     return (zmb);
 }
