@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 15:16:40 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/07 09:07:07 by aouhadou         ###   ########.fr       */
+/*   Created: 2022/10/06 15:14:21 by aouhadou          #+#    #+#             */
+/*   Updated: 2022/10/07 03:14:16 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef HARL_HPP
+#define HARL_HPP
 
-int main()
+#include <iostream>
+class Harl
 {
-    Harl    obj;
+private:
+    void    debug(void);
+    void    info(void);
+    void    warning(void);
+    void    error(void);
+public:
+   void complain(std::string level);
+    Harl(/* args */);
+    ~Harl();
+};
 
-    obj.complain("DEBUG");
-    std::cout << '\n';
-    obj.complain("INFO");
-    std::cout << '\n';
-    obj.complain("WARNING");
-    std::cout << '\n';
-    obj.complain("ERROR");
-    std::cout << '\n';
-    obj.complain("just random test");
-    return (0);
-}
-
+#endif
