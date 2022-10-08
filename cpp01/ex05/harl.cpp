@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:22:39 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/07 09:07:25 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/07 10:04:00 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,21 +52,21 @@ void Harl::complain(std::string level)
     }
     switch (res)
     {
-    case 1:
-        p->debug();
-        break;
-    case 2:
-        p->info();
-        break;
-    case 3:
-        p->warning();
-        break;
-    case 4:
-        p->error();
-        break;
-    default:
-        std::cout << '\n' << " This level doesn't exist" << std::endl;
-        break;
+        case 1:
+            p->debug();
+            break;
+        case 2:
+            p->info();
+            break;
+        case 3:
+            p->warning();
+            break;
+        case 4:
+            p->error();
+            break;
+        default:
+            std::cout << '\n' << " This level doesn't exist" << std::endl;
+            break;
     }
 }
 

@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 15:53:43 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/07 03:40:53 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/08 21:15:03 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void find_and_replace(std::string& s, std::string const& toReplace,
         buf += replaceWith;
         pos += toReplace.size();
     }
-
     buf.append(s, prevPos, s.size() - prevPos);
     s.swap(buf);
 }
