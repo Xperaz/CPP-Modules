@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 12:19:24 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/04 19:44:44 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/09 10:27:37 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ private:
 public:
     Weapon(std::string name);
     ~Weapon();
-    std::string &getType();
+    const std::string &getType();
     void    setType(std::string type);
 };
 

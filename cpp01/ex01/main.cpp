@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 10:21:09 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/03 12:51:18 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/09 10:20:39 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
     Zombie  *zmb = NULL;
 
-    zmb = zmb->zombieHorde(5, "test");
+    zmb = zmb->zombieHorde(5, "more brainz");
     delete[] zmb;
     return (0);
 }
