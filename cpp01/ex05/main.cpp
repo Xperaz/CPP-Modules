@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:16:40 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/07 09:07:07 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/10 15:01:26 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main()
     std::cout << '\n';
     obj.complain("ERROR");
     std::cout << '\n';
-    obj.complain("just random test");
+    obj.complain("random");
     return (0);
 }
 

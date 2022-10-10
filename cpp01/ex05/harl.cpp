@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:22:39 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/09 11:08:47 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/10 15:01:58 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,36 +38,26 @@ void    Harl::error()
 
 void Harl::complain(std::string level)
 {
-    int     res;
     int     i;
-    Harl    *p = NULL;
+    int     not_found;
+    void    (Harl::*p[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     std::string levs[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    res = 0;
+
+    not_found = 0;
     i = 0;
     while (i < 4)
     {
-        if (!(levs[i].compare(level)))
-            res += i + 1;
+        void (Harl::*f)(void) = p[i];
+        if (levs[i] == level){
+            not_found = 1;
+            (this->*f)();
+            break;
+        }
         i++;
     }
-    switch (res)
-    {
-        case 1:
-            p->debug();
-            break;
-        case 2:
-            p->info();
-            break;
-        case 3:
-            p->warning();
-            break;
-        case 4:
-            p->error();
-            break;
-        default:
-            std::cout << '\n' << " This level doesn't exist" << std::endl;
-            break;
-    }
+    if (not_found != 1)
+        std::cout << " thid level doesn't exist !" << std::endl;
+    
 }
 
 Harl::Harl(/* args */)

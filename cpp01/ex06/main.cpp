@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:16:40 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/07 09:13:22 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/10 14:31:20 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
     Harl    obj;
 
-    obj.complain("WARNING");
+    obj.complain("");
     return (0);
 }
 
