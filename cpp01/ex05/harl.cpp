@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:22:39 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/10 15:01:58 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/10 16:15:09 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void Harl::complain(std::string level)
     int     i;
     int     not_found;
     void    (Harl::*p[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-    std::string levs[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    std::string levs[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
     not_found = 0;
     i = 0;
@@ -56,7 +56,7 @@ void Harl::complain(std::string level)
         i++;
     }
     if (not_found != 1)
-        std::cout << " thid level doesn't exist !" << std::endl;
+        std::cout << " this level doesn't exist !" << std::endl;
     
 }
 
