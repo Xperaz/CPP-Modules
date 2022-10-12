@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:22:39 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/10 16:15:09 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/12 10:37:18 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ void Harl::complain(std::string level)
 {
     int     i;
     int     not_found;
-    void    (Harl::*p[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-    std::string levs[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    void    (Harl::*p[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    std::string levs[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
     not_found = 0;
     i = 0;

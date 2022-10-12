@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 12:39:04 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/07 09:22:46 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/12 09:50:31 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ Zombie::Zombie(std::string name_)
 
 Zombie::~Zombie()
 {
-    std::cout << getName() << ": deconstructor called!!" << std::endl;
+    std::cout << getName() << ": destructor called!!" << std::endl;
 }
 
 std::string Zombie::getName()
