@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:22:39 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/10 14:30:41 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/12 13:26:49 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,9 @@ void Harl::complain(std::string level)
         (this->*p[2])();
     case 4:
         (this->*p[3])();
+        break;
     default:
+        std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
         break;
     }
 }

@@ -6,17 +6,20 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:16:40 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/10 14:31:20 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/12 13:22:05 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main()
+int main(int ac, char **av)
 {
     Harl    obj;
 
-    obj.complain("");
+    if (ac != 2)
+        return (0);
+    if (av[1])
+        obj.complain(av[1]);
     return (0);
 }
 

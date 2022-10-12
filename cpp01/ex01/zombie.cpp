@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 12:39:04 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/12 10:05:18 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/03 13:00:36 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,4 @@ void Zombie::announce()
 Zombie::~Zombie()
 {
     std::cout << _name << ": deconstructor called!!" << std::endl;
-    //delete[] this;
 }

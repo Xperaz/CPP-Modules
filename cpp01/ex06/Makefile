@@ -6,7 +6,7 @@
 #    By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 15:14:04 by aouhadou          #+#    #+#              #
-#    Updated: 2022/10/07 09:07:44 by aouhadou         ###   ########.fr        #
+#    Updated: 2022/10/12 13:23:46 by aouhadou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS = main.cpp harl.cpp\
 
 OBJS=$(SRCS:.cpp=.o)
 
-NAME = harl_filter
+NAME = harlFilter
 
 all: $(NAME)
 

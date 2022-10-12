@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 12:39:04 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/12 09:50:31 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/12 12:59:51 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,14 @@ std::string generate_zombie(int len)
         "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         "abcdefghijklmnopqrstuvwxyz";
     std::string tmp_s;
+    int             i;
+    
     tmp_s.reserve(len);
-
-    for (int i = 0; i < len; ++i) {
+    i = 0;
+    while (i < len)
+    {
         tmp_s += alphanum[rand() % (sizeof(alphanum) - 1)];
+        i++;
     }
     return tmp_s;
 }
@@ -33,7 +37,7 @@ Zombie::Zombie()
     int len = std::rand() % 15;
     random = generate_zombie(len);
     name = random;
-    std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    announce();
 }
 
 void Zombie::announce(void)
@@ -46,7 +50,7 @@ Zombie::Zombie(std::string name_)
     if (!(name_.empty()))
     {
         name = name_;
-        std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+        announce();
     }
 }
 

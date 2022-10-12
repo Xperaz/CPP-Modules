@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 12:24:58 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/12 10:21:40 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/09 10:43:02 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Weapon::Weapon(std::string name)
 {
-	_type = name;
+	this->_type = name;
 }
 
 Weapon::~Weapon()
