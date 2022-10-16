@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 15:06:16 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/16 19:55:13 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/16 19:53:26 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 ClapTrap::ClapTrap()
 	:_hit(10), _energy(10), _damage(0)
 {
-	std::cout << "default constructor called!!" << std::endl;
+	std::cout << "ClapTrap default constructor called!!" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
 :_name(name), _hit(10), _energy(10), _damage(0)
 {
-	std::cout << "prameterized constructor called!!" << std::endl;
+	std::cout << "ClapTrap prameterized constructor called!!" << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap & src )
@@ -40,7 +40,7 @@ ClapTrap::ClapTrap( const ClapTrap & src )
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "destructor called!!" << std::endl;
+	std::cout << "ClapTrap destructor called!!" << std::endl;
 }
 
 
@@ -78,14 +78,15 @@ void	ClapTrap::attack(const std::string	&target)
 		this->_energy -= 1;
 		std::cout << "ClapTrap " << this->_name << " attacks " << target << " causing " << this->_damage << " points of damage!" << std::endl;
 	}
-	if (this->_hit <= 0 || this->_energy <= 0)
-		std::cout << this->_name << " is dead " << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->_hit > 0)
 		this->_hit -= amount;
+	if (this->_hit <= 0 || this->_energy <= 0)
+		std::cout << this->_name << " is dead " << std::endl;
+	
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
