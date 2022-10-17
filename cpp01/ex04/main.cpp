@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 15:53:43 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/12 13:40:12 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/14 10:56:05 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,27 @@ int check_args(int ac, char **av)
     return (0);
 }
 
+int check_null(char **av, std::string content, std::string name)
+{
+    std::ofstream   replace_f;
+    if (!av[2][0] || !av[3][0])
+    {
+        if (!av[2][0] && av[3][0])
+        {
+            std::cout << "what do you mean by remplacing nothing 😕" << std::endl;
+            return (0);
+        }
+        if (!av[2][0] && !av[3][0])
+        {
+            replace_f.open(name + ".replace");
+            replace_f << content;
+            return (0);
+            
+        }    
+    }
+    return (1);
+}
+
 int main(int ac, char **av)
 {
     std::string     content;
@@ -91,20 +112,8 @@ int main(int ac, char **av)
         std::getline (file, line);
         content += line + '\n';
     }
-    if (!av[2][0] || !av[3][0])
-    {
-        if (!av[2][0] && av[3][0])
-        {
-            std::cout << "what do you mean by remplacing nothing 😕" << std::endl;
-            return (0);
-        }
-        if (!av[2][0] && !av[3][0])
-        {
-            replace_f << content;
-            return (0);
-            
-        }
-    }
+    if (!check_null(av, content, rep_name))
+        return (0);
     find_and_replace(content, av[2], av[3]);
     replace_f << content;
     file.close();

@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 12:24:30 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/05 16:37:19 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/17 14:55:52 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void    HumanB::attack()
         std::cout << this->_name <<  " can't attacks " << std::endl;
 }
 
-void HumanB::setWeapon(Weapon wpn)
+void HumanB::setWeapon(Weapon &wpn)
 {
     _weapon = &wpn;
 }

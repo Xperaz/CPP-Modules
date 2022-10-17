@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 12:22:20 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/05 13:23:25 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/17 14:55:43 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ private:
     std::string _name;
 public:
     HumanB(std::string name);
-    void    setWeapon(Weapon wpn);
+    void    setWeapon(Weapon &wpn);
     std::string getWeapon();
     void attack();
     ~HumanB();

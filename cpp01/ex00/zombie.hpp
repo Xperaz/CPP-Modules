@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 11:28:18 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/03 10:18:01 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/17 14:52:09 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ private:
 public:
     Zombie();
     Zombie(std::string name_);
-    Zombie  *newZombie(std::string name);
-    void randomChump(std::string name);
     void announce(void);
     std::string getName();
     ~Zombie();
 
 };
 
+Zombie  *newZombie(std::string name);
+void randomChump(std::string name);
 //std::string generate_zombie(int len);
 
 # endif

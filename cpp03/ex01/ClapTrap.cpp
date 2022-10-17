@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 15:06:16 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/16 19:53:26 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/17 11:25:23 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,20 @@
 */
 
 ClapTrap::ClapTrap()
-	:_hit(10), _energy(10), _damage(0)
+	:_hit(100), _energy(50), _damage(20)
 {
 	std::cout << "ClapTrap default constructor called!!" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
-:_name(name), _hit(10), _energy(10), _damage(0)
+:_name(name), _hit(100), _energy(50), _damage(20)
 {
-	std::cout << "ClapTrap prameterized constructor called!!" << std::endl;
+	std::cout << "ClapTrap prameterized constructor called!!" << _name << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap & src )
 {
+	std::cout << "ClapTrap Copy constructor called!!" << std::endl;
 	*this = src;
 }
 
@@ -40,7 +41,7 @@ ClapTrap::ClapTrap( const ClapTrap & src )
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap destructor called!!" << std::endl;
+	std::cout << "ClapTrap destructor called!!" << _name << std::endl;
 }
 
 
@@ -50,6 +51,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap &				ClapTrap::operator=( ClapTrap const & rhs )
 {
+	std::cout << "ClapTrap Assignement Operator called!!" << std::endl;
 	if ( this != &rhs )
 	{
 		this->_name = rhs._name;

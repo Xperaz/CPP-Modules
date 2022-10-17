@@ -6,7 +6,7 @@
 #    By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 15:00:54 by aouhadou          #+#    #+#              #
-#    Updated: 2022/10/16 19:14:21 by aouhadou         ###   ########.fr        #
+#    Updated: 2022/10/17 10:20:39 by aouhadou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,8 +27,8 @@ all: $(NAME)
 $(NAME):$(OBJS) $(HEADER)
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
-%.o:%.cpp $(HEADER)
-	$(CC) $(FLAGS) -c $< -o $@
+# %.o:%.cpp $(HEADER)
+# 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJS)
