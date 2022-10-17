@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/17 18:42:13 by aouhadou          #+#    #+#             */
+/*   Updated: 2022/10/17 19:59:40 by aouhadou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Point.hpp"
 #include "Fixed.hpp"
 
@@ -10,10 +22,9 @@ Point::Point()
 {
 }
 
-Point::Point(Point const x_, Point const y_)
+Point::Point(const float x_, const float y_)
+:_x(x_), _y(y_)
 {
-	_x = x_;
-	_y = y_;
 }
 
 Point::Point( const Point & src )
@@ -37,17 +48,20 @@ Point::~Point()
 
 Point &				Point::operator=( Point const & rhs )
 {
-	_x = rhs._x;
-	_y = rhs._y;
-	
-	return *this;
+	if (this != &rhs)
+	{
+		const_cast<Fixed &> (_x)= rhs._x;
+		const_cast<Fixed &> (_y)= rhs._y;
+		
+	}
+	return (*this);
 }
 
-std::ostream &			operator<<( std::ostream & o, Point const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
-}
+// std::ostream &			operator<<( std::ostream & o, Point const & i )
+// {
+// 	//o << "Value = " << i.getValue();
+// 	return o;
+// }
 
 
 /*

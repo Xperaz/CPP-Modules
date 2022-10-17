@@ -1,16 +1,23 @@
-#ifndef POINT_HPP
-# define POINT_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/17 18:41:40 by aouhadou          #+#    #+#             */
+/*   Updated: 2022/10/17 18:54:24 by aouhadou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "Fixed.hpp"
-# include <iostream>
-# include <string>
 
 class Point
 {
 
 	public:
 		Point();
-		Point(Point const x_, Point const y_);
+		Point(const float x_, const float y_);
 		Point( Point const & src );
 		~Point();
 
@@ -23,5 +30,3 @@ class Point
 };
 
 std::ostream &			operator<<( std::ostream & o, Point const & i );
-
-#endif /* *********************************************************** POINT_H */

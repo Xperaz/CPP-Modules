@@ -6,11 +6,12 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 16:34:16 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/13 18:34:07 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/17 18:42:08 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include "Point.hpp"
 
 int main( void ) {
     Fixed a;
