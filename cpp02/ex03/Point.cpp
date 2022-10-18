@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 18:42:13 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/17 19:59:40 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/18 21:43:37 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Point::Point()
 
 Point::Point(const float x_, const float y_)
 :_x(x_), _y(y_)
-{
+{	
 }
 
 Point::Point( const Point & src )
@@ -59,7 +59,7 @@ Point &				Point::operator=( Point const & rhs )
 
 // std::ostream &			operator<<( std::ostream & o, Point const & i )
 // {
-// 	//o << "Value = " << i.getValue();
+// 	o << "Value = " << i;
 // 	return o;
 // }
 
@@ -68,6 +68,15 @@ Point &				Point::operator=( Point const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
+float	Point::getx() const 
+{
+	return(_x.toFloat());
+}
+
+float	Point::gety() const
+{
+	return(_y.toFloat());
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

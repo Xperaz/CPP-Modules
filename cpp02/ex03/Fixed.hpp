@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 17:04:56 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/13 17:05:09 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/18 10:25:27 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <string>
 # include <cmath>
+//#include "Point.hpp"
 
 class Fixed
 {

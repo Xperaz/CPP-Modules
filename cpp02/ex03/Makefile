@@ -6,7 +6,7 @@
 #    By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 15:00:54 by aouhadou          #+#    #+#              #
-#    Updated: 2022/10/13 20:06:58 by aouhadou         ###   ########.fr        #
+#    Updated: 2022/10/18 10:25:50 by aouhadou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 FLAGS = -std=c++98 -pedantic-errors -Wall -Wextra -Werror
 
-SRCS = main.cpp Fixed.cpp Point.cpp\
+SRCS = main.cpp Fixed.cpp Point.cpp bsp.cpp\
 
 OBJS=$(SRCS:.cpp=.o)
 
