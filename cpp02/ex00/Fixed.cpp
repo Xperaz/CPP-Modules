@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/20 16:23:52 by aouhadou          #+#    #+#             */
+/*   Updated: 2022/10/20 16:50:17 by aouhadou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 /*
@@ -17,25 +29,6 @@ Fixed::Fixed( const Fixed & src )
 }
 
 /*
-** -------------------------------- SETRAWBITS --------------------------------
-*/
-
-void	Fixed::setRawBits(int const raw)
-{
-	_fp = raw;
-}
-
-/*
-** -------------------------------- GETRAWBITS --------------------------------
-*/
-
-int	Fixed::getRawBits() const
-{
-	std::cout << "getRawBits member function called" << std::endl;
-	return (_fp);
-}
-
-/*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
@@ -46,7 +39,7 @@ Fixed::~Fixed()
 
 
 /*
-** --------------------------------- OVERLOAD ---------------------------------
+** --------------------------------- OVERLOAD OPERATORS ---------------------------------
 */
 
 Fixed &				Fixed::operator=( Fixed const & rhs )
@@ -67,10 +60,15 @@ std::ostream &			operator<<( std::ostream & o, Fixed const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
+int	Fixed::getRawBits() const
+{
+	std::cout << "getRawBits member function called" << std::endl;
+	return (_fp);
+}
 
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
-
+void	Fixed::setRawBits(int const raw)
+{
+	_fp = raw;
+}
 
 /* ************************************************************************** */

@@ -6,7 +6,7 @@
 #    By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 15:00:54 by aouhadou          #+#    #+#              #
-#    Updated: 2022/10/13 16:51:02 by aouhadou         ###   ########.fr        #
+#    Updated: 2022/10/20 16:45:04 by aouhadou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ HEADER=Fixed.hpp
 
 CC = c++
 
-FLAGS = -std=c++98 -pedantic-errors -Wall -Wextra -Werror
+FLAGS = -std=c++98 -Wall -Wextra -Werror
 
 SRCS = main.cpp Fixed.cpp\
 

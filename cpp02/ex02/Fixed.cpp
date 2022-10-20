@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 16:41:51 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/13 18:38:48 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/20 17:19:37 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ Fixed::Fixed( const Fixed & src )
 
 float Fixed::toFloat( void ) const
 {
-	// std::cout << _fp << std::endl;
     return ((float)_fp / (float)(1 << bits)); 
 }
 

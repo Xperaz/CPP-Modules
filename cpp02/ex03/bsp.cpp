@@ -6,14 +6,14 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 10:09:53 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/19 19:13:58 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/20 17:02:55 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 #include "Fixed.hpp"
 
-float   get_area(Point const a, Point const b, Point const c)
+float   triangle_area(Point const a, Point const b, Point const c)
 {
     float a1 = (c.getx() * (a.gety() - b.gety()));
     float a2 = (a.getx() * (b.gety() - c.gety()));
@@ -26,14 +26,13 @@ float   get_area(Point const a, Point const b, Point const c)
 
 bool bsp( Point const a, Point const b, Point const c, Point const point)
 { 
-    float full_area = get_area(a, b, c);
+    float full_area = triangle_area(a, b, c);
     
-    float area1 = get_area(point, a, c);
-    float area2 = get_area(point, a, b);
-    float area3 = get_area(point, b, c);
+    float area1 = triangle_area(point, a, c);
+    float area2 = triangle_area(point, a, b);
+    float area3 = triangle_area(point, b, c);
     
     float add = area1 + area2 + area3;
-    //std::cout << full_area << "\n" << add << std::endl;
     if (add == full_area)
         return (1);
     return (0);
