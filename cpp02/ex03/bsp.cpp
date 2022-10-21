@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 10:09:53 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/21 13:39:25 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/21 22:28:16 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ bool bsp( Point const a, Point const b, Point const c, Point const point)
     float area3 = triangle_area(point, b, c);
     
     float add = area1 + area2 + area3;
+    if (area1 == 0 || area2 == 0 || area3 == 0)
+        return (0);
     if (add == full_area)
         return (1);
     return (0);

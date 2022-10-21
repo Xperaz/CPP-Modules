@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:58:38 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/20 16:24:02 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/21 22:04:27 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ int main( void )
     
     std::cout << a.getRawBits() << std::endl;
     std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
+    std::cout << c << std::endl;
+
+
+    float p = 55.5;
+    std::cout <<p * (1 << 8) << std::endl;
     return 0;
 }
+

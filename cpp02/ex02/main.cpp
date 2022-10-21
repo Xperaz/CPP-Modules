@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 16:34:16 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/13 18:34:07 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/21 22:25:29 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ int main( void ) {
     std::cout << a++ << std::endl;
     std::cout << a << std::endl;
     std::cout << b << std::endl;
-    std::cout << Fixed::max( a, b ) << std::endl;
+    std::cout << Fixed::max(a, b) << std::endl;
     return 0;
 }

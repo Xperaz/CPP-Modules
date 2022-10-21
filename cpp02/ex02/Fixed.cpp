@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 16:41:51 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/20 17:19:37 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/21 22:24:19 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -206,11 +206,11 @@ Fixed	&Fixed::max(Fixed &t1, Fixed &t2)
 	return (t2);
 }
 
-Fixed &Fixed::max(Fixed const &t1, Fixed const &t2)
+Fixed &Fixed::max(Fixed  &t1, Fixed  &t2)
 {
-	if (const_cast<Fixed &>(t1) > const_cast<Fixed &>(t2))
-		return (const_cast<Fixed &>(t1));
-	return (const_cast<Fixed &>(t2));
+	if (t1 > t2)
+		return (t1);
+	return (t2);
 }
 
 /* ************************************************************************** */

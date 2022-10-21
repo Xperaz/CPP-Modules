@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 17:04:56 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/13 17:05:09 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/21 22:24:57 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ class Fixed
 		static Fixed	& min(Fixed &t1, Fixed &t2);
 		static Fixed	& min(Fixed const & t1, Fixed const &t2);
 		static Fixed	& max(Fixed &t1, Fixed &t2);
-		static Fixed	& max(Fixed const &t1, Fixed const &t2);
+		//static Fixed	& max(Fixed  &t1, Fixed &t2);
 	
 	private:
 		int _fp;
