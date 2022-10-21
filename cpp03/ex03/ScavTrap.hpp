@@ -6,13 +6,16 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 20:26:00 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/21 11:23:20 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/21 10:31:26 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+
 #include "ClapTrap.hpp"
 
-class ScavTrap:public ClapTrap
+class ScavTrap:virtual public ClapTrap
 {
 
 	public:
@@ -23,9 +26,11 @@ class ScavTrap:public ClapTrap
 
 		ScavTrap &		operator=( ScavTrap const & rhs );
 
-	private:
+	protected:
 		ScavTrap();
 
 };
 
-//std::ostream &			operator<<( std::ostream & o, ScavTrap const & i );
+std::ostream &			operator<<( std::ostream & o, ScavTrap const & i );
+
+#endif

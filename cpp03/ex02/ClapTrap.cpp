@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 15:06:16 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/17 16:01:52 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/17 17:57:26 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 */
 
 ClapTrap::ClapTrap()
-	:_hit(100), _energy(50), _damage(20)
+	:_hit(100), _energy(100), _damage(30)
 {
 	std::cout << "ClapTrap default constructor called!!" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
-:_name(name), _hit(100), _energy(50), _damage(20)
+:_name(name), _hit(100), _energy(100), _damage(30)
 {
 	std::cout << "ClapTrap prameterized constructor called!!" << std::endl;
 }

@@ -41,10 +41,7 @@ ScavTrap &				ScavTrap::operator=( ScavTrap const & rhs )
 	std::cout << "ScavTrap Assignement Operator called!!" << std::endl;
 	if ( this != &rhs )
 	{
-		this->_damage = rhs._damage;
-		this->_energy = rhs._energy;
-		this->_hit = rhs._hit;
-		this->_name = rhs._name;
+		*this = rhs;
 	}
 	return *this;
 }

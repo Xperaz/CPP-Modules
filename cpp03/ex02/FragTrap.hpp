@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/16 20:26:00 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/21 11:23:20 by aouhadou         ###   ########.fr       */
+/*   Created: 2022/10/17 16:15:18 by aouhadou          #+#    #+#             */
+/*   Updated: 2022/10/21 11:17:58 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+# include "ClapTrap.hpp"
 
-class ScavTrap:public ClapTrap
+class FragTrap:public ClapTrap
 {
 
 	public:
-		ScavTrap(std::string name);
-		ScavTrap( ScavTrap const & src );
-		~ScavTrap();
-		void guardGate();
 
-		ScavTrap &		operator=( ScavTrap const & rhs );
+		FragTrap(std::string name);
+		FragTrap( FragTrap const & src );
+		~FragTrap();
+		void highFivesGuys(void);
+		FragTrap &		operator=( FragTrap const & rhs );
 
 	private:
-		ScavTrap();
-
+		FragTrap();
+		
 };
 
-//std::ostream &			operator<<( std::ostream & o, ScavTrap const & i );

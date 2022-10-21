@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 20:26:00 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/21 11:23:20 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/21 11:20:55 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class ScavTrap:public ClapTrap
 
 		ScavTrap &		operator=( ScavTrap const & rhs );
 
-	private:
+	protected:
 		ScavTrap();
 
 };
