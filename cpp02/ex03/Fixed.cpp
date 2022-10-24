@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 16:41:51 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/18 14:51:35 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/24 11:57:19 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ std::ostream &			operator<<( std::ostream & o, Fixed const & i )
 ** --------------------------------- COMPARISON OPETATORS ---------------------------------
 */
 
-int	Fixed::operator>(Fixed fp_)
+bool	Fixed::operator>(Fixed fp_)
 {
 	if (_fp > fp_._fp)
 		return (1);
@@ -128,7 +128,7 @@ int	Fixed::operator>(Fixed fp_)
 }
 
 
-int	Fixed::operator<(Fixed fp_)
+bool	Fixed::operator<(Fixed fp_)
 {
 	if (_fp < fp_._fp)
 		return (1);
@@ -137,7 +137,7 @@ int	Fixed::operator<(Fixed fp_)
 }
 
 
-int	Fixed::operator==(Fixed fp_)
+bool	Fixed::operator==(Fixed fp_)
 {
 	if (_fp == fp_._fp)
 		return (1);
@@ -146,7 +146,7 @@ int	Fixed::operator==(Fixed fp_)
 }
 
 
-int	Fixed::operator>=(Fixed fp_)
+bool	Fixed::operator>=(Fixed fp_)
 {
 	if (_fp >= fp_._fp)
 		return (1);
@@ -156,7 +156,7 @@ int	Fixed::operator>=(Fixed fp_)
 
 
 
-int	Fixed::operator<=(Fixed fp_)
+bool	Fixed::operator<=(Fixed fp_)
 {
 	if (_fp <= fp_._fp)
 		return (1);
@@ -166,7 +166,7 @@ int	Fixed::operator<=(Fixed fp_)
 
 
 
-int	Fixed::operator!=(Fixed fp_)
+bool	Fixed::operator!=(Fixed fp_)
 {
 	if (_fp != fp_._fp)
 		return (1);

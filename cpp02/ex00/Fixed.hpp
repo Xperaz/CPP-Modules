@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:23:57 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/21 21:48:27 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/23 08:33:55 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,5 @@ class Fixed
 		static const int bits = 8;
 
 };
-
-std::ostream &			operator<<( std::ostream & o, Fixed const & i );
 
 #endif

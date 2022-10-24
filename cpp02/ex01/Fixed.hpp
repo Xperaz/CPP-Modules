@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 17:04:56 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/13 12:27:18 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/24 14:24:20 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ class Fixed
 
 		float toFloat( void ) const;
 		int toInt( void ) const;
-		// int			getRawBits( void ) const;
-		// void		setRawBits( int const raw );
+		int			getRawBits( void ) const;
+		void		setRawBits( int const raw );
 		Fixed &		operator=( Fixed const & rhs );
 
 	private:
 		int _fp;
-		static const int bits = 8;
+		static  const int bits = 8;
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 15:34:13 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/21 11:16:32 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/22 10:43:22 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class ClapTrap
 {
 
 	public:
-
 		ClapTrap(std::string	name);
 		ClapTrap( ClapTrap const & src );
 		~ClapTrap();

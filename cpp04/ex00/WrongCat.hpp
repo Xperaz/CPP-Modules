@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 14:58:38 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/20 16:24:02 by aouhadou         ###   ########.fr       */
+/*   Created: 2022/10/23 18:28:58 by aouhadou          #+#    #+#             */
+/*   Updated: 2022/10/23 18:37:23 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-int main( void )
+#include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
 {
-    Fixed a;
-    Fixed b( a );
-    Fixed c;
-    
-    c = b;
-    
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
-    return 0;
-}
+
+	public:
+
+		WrongCat();
+		WrongCat( WrongCat const & src );
+		void	makeSound() const;
+		~WrongCat();
+		WrongCat &		operator=( WrongCat const & rhs );
+
+	private:
+
+};
+
+
+#endif /* ******************************************************** WRONGCAT_H */

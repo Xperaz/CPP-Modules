@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 16:41:51 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/13 12:25:28 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/24 14:24:25 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,16 @@ std::ostream &			operator<<( std::ostream & o, Fixed const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
+int	Fixed::getRawBits() const
+{
+	std::cout << "getRawBits member function called" << std::endl;
+	return (_fp);
+}
+
+void	Fixed::setRawBits(int const raw)
+{
+	_fp = raw;
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 17:04:56 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/18 10:25:27 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/24 11:56:58 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ class Fixed
 		** --------------------------------- COMPARISON OPERATORS ---------------------------------
 		*/
 		
-		int			operator>( Fixed fp_ );
-		int			operator<( Fixed fp_ );
-		int			operator==( Fixed fp_ );
-		int			operator>=( Fixed fp_ );
-		int			operator<=( Fixed fp_ );
-		int			operator!=( Fixed fp_ );
+		bool	operator>( Fixed fp_ );
+		bool	operator<( Fixed fp_ );
+		bool	operator==( Fixed fp_ );
+		bool	operator>=( Fixed fp_ );
+		bool	operator<=( Fixed fp_ );
+		bool	operator!=( Fixed fp_ );
 
 		/*
 		** --------------------------------- INCREMENT AND DECREMENT---------------------------------

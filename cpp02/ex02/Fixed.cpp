@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 16:41:51 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/21 22:24:19 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/24 11:56:20 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ std::ostream &			operator<<( std::ostream & o, Fixed const & i )
 ** --------------------------------- COMPARISON OPETATORS ---------------------------------
 */
 
-int	Fixed::operator>(Fixed fp_)
+bool	Fixed::operator>(Fixed fp_)
 {
 	if (_fp > fp_._fp)
 		return (1);
@@ -123,7 +123,7 @@ int	Fixed::operator>(Fixed fp_)
 }
 
 
-int	Fixed::operator<(Fixed fp_)
+bool	Fixed::operator<(Fixed fp_)
 {
 	if (_fp < fp_._fp)
 		return (1);
@@ -132,7 +132,7 @@ int	Fixed::operator<(Fixed fp_)
 }
 
 
-int	Fixed::operator==(Fixed fp_)
+bool	Fixed::operator==(Fixed fp_)
 {
 	if (_fp == fp_._fp)
 		return (1);
@@ -141,7 +141,7 @@ int	Fixed::operator==(Fixed fp_)
 }
 
 
-int	Fixed::operator>=(Fixed fp_)
+bool	Fixed::operator>=(Fixed fp_)
 {
 	if (_fp >= fp_._fp)
 		return (1);
@@ -151,7 +151,7 @@ int	Fixed::operator>=(Fixed fp_)
 
 
 
-int	Fixed::operator<=(Fixed fp_)
+bool	Fixed::operator<=(Fixed fp_)
 {
 	if (_fp <= fp_._fp)
 		return (1);
@@ -161,7 +161,7 @@ int	Fixed::operator<=(Fixed fp_)
 
 
 
-int	Fixed::operator!=(Fixed fp_)
+bool	Fixed::operator!=(Fixed fp_)
 {
 	if (_fp != fp_._fp)
 		return (1);
@@ -192,11 +192,11 @@ Fixed & Fixed::min(Fixed &t1, Fixed &t2)
 	return (t2);
 }
 
-Fixed & Fixed::min(Fixed const &t1, Fixed const &t2)
+const Fixed & Fixed::min(Fixed const &t1, Fixed const &t2)
 {
-	if (const_cast<Fixed &>(t1) < const_cast<Fixed &>(t2))
-		return (const_cast<Fixed &>(t1));
-	return (const_cast<Fixed &>(t2));
+	if ((t1._fp) < (t2._fp))
+		return (t1);
+	return (t2);
 }
 
 Fixed	&Fixed::max(Fixed &t1, Fixed &t2)
@@ -206,9 +206,9 @@ Fixed	&Fixed::max(Fixed &t1, Fixed &t2)
 	return (t2);
 }
 
-Fixed &Fixed::max(Fixed  &t1, Fixed  &t2)
+const Fixed &Fixed::max(Fixed const &t1, Fixed const &t2)
 {
-	if (t1 > t2)
+	if ((t1._fp) > (t2._fp))
 		return (t1);
 	return (t2);
 }
