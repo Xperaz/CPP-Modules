@@ -39,11 +39,15 @@ DiamondTrap::~DiamondTrap()
 
 DiamondTrap &				DiamondTrap::operator=( DiamondTrap const & rhs )
 {
-	static_cast<void> (rhs);
-	// if ( this != &rhs )
-	// {
-	// 	this.= rhs._name;
-	// }
+	// static_cast<void> (rhs);
+	if ( this != &rhs )
+	{
+		_name = rhs._name;
+		_damage = rhs._damage;
+		_hit = rhs._hit;
+		_energy = rhs._energy;
+
+	}
 	return *this;
 }
 

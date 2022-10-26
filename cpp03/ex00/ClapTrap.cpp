@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 15:06:16 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/16 19:55:13 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/26 21:28:17 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,6 @@ ClapTrap &				ClapTrap::operator=( ClapTrap const & rhs )
 	return *this;
 }
 
-// std::ostream &			operator<<( std::ostream & o, ClapTrap const & i )
-// {
-// 	//o << "Value = " << i.getValue();
-// 	return o;
-// }
-
-
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
@@ -79,7 +72,7 @@ void	ClapTrap::attack(const std::string	&target)
 		std::cout << "ClapTrap " << this->_name << " attacks " << target << " causing " << this->_damage << " points of damage!" << std::endl;
 	}
 	if (this->_hit <= 0 || this->_energy <= 0)
-		std::cout << this->_name << " is dead " << std::endl;
+		std::cout << this->_name << " can't attack" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
