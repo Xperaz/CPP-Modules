@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 15:06:16 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/20 18:59:12 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/27 10:23:50 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,19 @@
 */
 
 ClapTrap::ClapTrap()
-	:_hit(100), _energy(50), _damage(30)
+	:_hit(10), _energy(10), _damage(0)
 {
 	std::cout << "ClapTrap default constructor called!!" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
-:_name(name), _hit(100), _energy(50), _damage(30)
+:_name(name), _hit(10), _energy(10), _damage(0)
 {
 	std::cout << "ClapTrap prameterized constructor called!!" << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap & src )
 {
-	std::cout << "ClapTrap Copy constructor called!!" << std::endl;
 	*this = src;
 }
 
@@ -62,12 +61,6 @@ ClapTrap &				ClapTrap::operator=( ClapTrap const & rhs )
 	return *this;
 }
 
-// std::ostream &			operator<<( std::ostream & o, ClapTrap const & i )
-// {
-// 	//o << "Value = " << i.getValue();
-// 	return o;
-// }
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------
@@ -80,24 +73,27 @@ void	ClapTrap::attack(const std::string	&target)
 		this->_energy -= 1;
 		std::cout << "ClapTrap " << this->_name << " attacks " << target << " causing " << this->_damage << " points of damage!" << std::endl;
 	}
+	else
+		std::cout << this->_name << " can't attack" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->_hit > 0)
 		this->_hit -= amount;
-	if (this->_hit <= 0 || this->_energy <= 0)
-		std::cout << this->_name << " is dead " << std::endl;
-	
+	else
+		std::cout << this->_name << " is dead" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->_energy > 0 && this->_energy)
+	if (this->_energy > 0 && this->_hit > 0)
 	{
 		this->_hit += amount;
 		this->_energy -= 1;	
 	}
+	else
+		std::cout << " don't have enough point to be repaired" << std::endl;
 }
 
 /*

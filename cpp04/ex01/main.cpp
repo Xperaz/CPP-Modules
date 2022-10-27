@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 14:43:36 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/26 12:58:25 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/26 13:24:49 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,13 @@
 
 int main()
 {
-    Animal **an = new Animal *[10];
+  Animal **an = new Animal*[10];
 
     int j = 0;
     while (j < 10/2)
       an[j++] = new Cat;
     while (j < 10)
       an[j++] = new Dog;
-    
-    *an[0] = *an[1];    
     for (size_t i = 0; i < 10; i++)
       an[i]->makeSound();
     for (size_t i = 0; i < 10; i++)

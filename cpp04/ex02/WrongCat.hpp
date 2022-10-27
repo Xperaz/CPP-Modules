@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 15:04:07 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/20 12:16:28 by aouhadou         ###   ########.fr       */
+/*   Created: 2022/10/23 18:28:58 by aouhadou          #+#    #+#             */
+/*   Updated: 2022/10/23 18:37:23 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-int main()
+#include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
 {
-    FragTrap clop("clop");
-    FragTrap clap("clap");
-    clop.attack("clap");
-    clap.takeDamage(150);
-    clop.beRepaired(2);
-    clap.highFivesGuys();
-    return (0);
-}
+
+	public:
+
+		WrongCat();
+		WrongCat( WrongCat const & src );
+		void	makeSound() const;
+		~WrongCat();
+		WrongCat &		operator=( WrongCat const & rhs );
+
+	private:
+
+};
+
+
+#endif /* ******************************************************** WRONGCAT_H */

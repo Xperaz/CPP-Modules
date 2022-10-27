@@ -6,16 +6,13 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:15:18 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/21 10:31:16 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/27 13:42:07 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
-
 # include "ClapTrap.hpp"
 
-class FragTrap:virtual public ClapTrap
+class FragTrap: virtual public ClapTrap
 {
 
 	public:
@@ -31,4 +28,3 @@ class FragTrap:virtual public ClapTrap
 		
 };
 
-#endif

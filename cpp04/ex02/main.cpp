@@ -5,29 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 15:04:07 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/27 11:20:22 by aouhadou         ###   ########.fr       */
+/*   Created: 2022/10/23 14:43:36 by aouhadou          #+#    #+#             */
+/*   Updated: 2022/10/26 14:11:08 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
-    FragTrap clop("clop");
-    FragTrap clap("clap");
-    clop.attack("clap");
-    clap.takeDamage(150);
-    clop.beRepaired(2);
-    clap.highFivesGuys();
+  Animal **an = new Animal*[10];
 
-    // FragTrap pep("pep");
-    // FragTrap mor("mor");
-    // pep.attack("mor");
-    // mor.takeDamage(50);
-    // pep.beRepaired(2);
-    // mor.highFivesGuys();
-    return (0);
+    int j = 0;
+    while (j < 10/2)
+      an[j++] = new Cat;
+    while (j < 10)
+      an[j++] = new Dog; 
+    for (size_t i = 0; i < 10; i++)
+      an[i]->makeSound();
+    for (size_t i = 0; i < 10; i++)
+      delete an[i];
+    delete [] an;
+    return 0;
 }

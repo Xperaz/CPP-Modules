@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 15:34:13 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/21 10:30:23 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/27 13:41:07 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class ClapTrap
 {
 
 	public:
-
 		ClapTrap(std::string	name);
 		ClapTrap( ClapTrap const & src );
 		~ClapTrap();
@@ -37,7 +36,5 @@ class ClapTrap
 		int	_energy;
 		int	_damage;
 };
-
-//std::ostream &			operator<<( std::ostream & o, ClapTrap const & i );
 
 #endif /* ********************************************************* ClapTrap_H */

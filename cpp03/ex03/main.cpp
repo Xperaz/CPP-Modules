@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 15:04:07 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/26 22:04:57 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/27 13:59:06 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
     
 	{
-		DiamondTrap di4mondtp("test");
+		DiamondTrap di4mondtp("Diamond");
 
 		di4mondtp.attack("Handsome Jack");
 		di4mondtp.takeDamage(6);

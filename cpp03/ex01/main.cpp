@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 15:04:07 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/17 11:12:23 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/27 11:04:26 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 int main()
 {
+    
     ScavTrap clop("clop");
     ScavTrap clap("clap");
     clop.attack("clap");

@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/23 14:45:35 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/26 13:12:29 by aouhadou         ###   ########.fr       */
+/*   Created: 2022/10/23 18:19:32 by aouhadou          #+#    #+#             */
+/*   Updated: 2022/10/23 18:48:00 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal()
-	:type("animal")
+WrongAnimal::WrongAnimal()
+	: type("wrong animal")
 {
-	std::cout << "animal default constructor called!" << std::endl;
+	std::cout << "WrongAnimal default constructor called!" << std::endl;
 }
 
-Animal::Animal( const Animal & src )
+WrongAnimal::WrongAnimal( const WrongAnimal & src )
 {
+	std::cout << "WrongAnimal copy constructor called!" << std::endl;
 	*this = src;
-	std::cout << "animal copy constructor called!" << std::endl;
 }
 
 
@@ -33,9 +33,9 @@ Animal::Animal( const Animal & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "animal destructor called!" << std::endl;
+	std::cout << "WrongAnimal Destructor called!" << std::endl;
 }
 
 
@@ -43,7 +43,7 @@ Animal::~Animal()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Animal &				Animal::operator=( Animal const & rhs )
+WrongAnimal &				WrongAnimal::operator=( WrongAnimal const & rhs )
 {
 	if ( this != &rhs )
 	{
@@ -57,19 +57,19 @@ Animal &				Animal::operator=( Animal const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void	Animal::setType(std::string	type)
+void	WrongAnimal::setType(std::string	type)
 {
 	this->type = type;
 }
 
-std::string Animal::getType() const
+std::string WrongAnimal::getType() const
 {
 	return (type);
 }
 
-void	Animal::makeSound() const
+void	WrongAnimal::makeSound() const
 {
-	std::cout << "there is no animal in barn" << std::endl;
+	std::cout << "there is no WrongAnimal in bran" << std::endl;
 }
 
 /*

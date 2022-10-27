@@ -6,20 +6,22 @@
 
 DiamondTrap::DiamondTrap()
 {
+	std::cout << "DiamondTrap default constructor called!" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const std::string &name)
 {
+	std::cout << "DiamondTrap parametrized constructor called!" << std::endl;
 	ClapTrap::_name = name + "_clap_name";
-	this->_name = name;
+	this->name = name;
 	this->_hit = FragTrap::_hit;
 	this->_energy = ScavTrap::_energy;
 	this->_damage = FragTrap::_damage;
-	this->attack(ScavTrap::_name);
 }
 
 DiamondTrap::DiamondTrap( const DiamondTrap & src )
 {
+	std::cout << "DiamondTrap copy constructor called!" << std::endl;
 	*this = src;
 }
 
@@ -30,6 +32,7 @@ DiamondTrap::DiamondTrap( const DiamondTrap & src )
 
 DiamondTrap::~DiamondTrap()
 {
+	std::cout << "DiamondTrap destructor called!" << std::endl;
 }
 
 
@@ -39,10 +42,10 @@ DiamondTrap::~DiamondTrap()
 
 DiamondTrap &				DiamondTrap::operator=( DiamondTrap const & rhs )
 {
-	// static_cast<void> (rhs);
 	if ( this != &rhs )
 	{
-		_name = rhs._name;
+		this->name = rhs.name;
+		_name = rhs.name;
 		_damage = rhs._damage;
 		_hit = rhs._hit;
 		_energy = rhs._energy;
@@ -51,20 +54,19 @@ DiamondTrap &				DiamondTrap::operator=( DiamondTrap const & rhs )
 	return *this;
 }
 
-// std::ostream &			operator<<( std::ostream & o, DiamondTrap const & i )
-// {
-// 	//o << "Value = " << i.getValue();
-// 	return o;
-// }
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
+std::string DiamondTrap::getName()
+{
+	return (name);
+}
+
 void DiamondTrap::whoAmI()
 {
-	std::cout << this->getName() << " " << typeid(DiamondTrap).name() << std::endl;
+	std::cout << this->getName() << std::endl;
 }
 
 /*

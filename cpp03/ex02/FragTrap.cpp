@@ -6,12 +6,18 @@
 
 FragTrap::FragTrap()
 {
+	ClapTrap::_hit = 100;
+	ClapTrap::_energy = 100;
+	ClapTrap::_damage = 30;
 	std::cout << "FragTrap default constructor called!!" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name)
-:ClapTrap(name)
 {
+	ClapTrap::_name = name;
+	ClapTrap::_hit = 100;
+	ClapTrap::_energy = 100;
+	ClapTrap::_damage = 30;
 	std::cout << "FragTrap prameterized constructor called!!" << std::endl;
 }
 
@@ -40,7 +46,10 @@ FragTrap &				FragTrap::operator=( FragTrap const & rhs )
 {
 	if ( this != &rhs )
 	{
-		*this = rhs;	
+		_damage = rhs._damage;
+		_energy = rhs._energy;
+		_hit = rhs._hit;
+		_name = rhs._name;	
 	}
 	return *this;
 }
@@ -49,6 +58,17 @@ FragTrap &				FragTrap::operator=( FragTrap const & rhs )
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
+
+	void	FragTrap::attack(const std::string	&target)
+{
+	if (this->_hit > 0 && this->_energy > 0)
+	{
+		this->_energy -= 1;
+		std::cout << this->_name << " strike " << target << " causing " << this->_damage << " points of damage!" << std::endl;
+	}
+	else
+		std::cout << this->_name << " can't attack" << std::endl;
+}
 
 void FragTrap::highFivesGuys(void)
 {
