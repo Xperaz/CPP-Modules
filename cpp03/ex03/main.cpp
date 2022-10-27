@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 15:04:07 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/27 13:59:06 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/27 17:53:59 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,52 +16,52 @@ int main()
 {
     
 	{
-		DiamondTrap di4mondtp("Diamond");
+		DiamondTrap diamond("Diamond");
 
-		di4mondtp.attack("Handsome Jack");
-		di4mondtp.takeDamage(6);
-		di4mondtp.beRepaired(4);
-		di4mondtp.takeDamage(3);
-		di4mondtp.guardGate();
-		di4mondtp.highFivesGuys();
-		di4mondtp.whoAmI();
-		di4mondtp.beRepaired(8);
-		di4mondtp.takeDamage(17);
+		diamond.attack("pep");
+		diamond.takeDamage(6);
+		diamond.beRepaired(4);
+		diamond.takeDamage(3);
+		diamond.guardGate();
+		diamond.highFivesGuys();
+		diamond.whoAmI();
+		diamond.beRepaired(8);
+		diamond.takeDamage(17);
 	}
 	std::cout << "----------------------------------------" << std::endl;
 	{
-		FragTrap fr4gtp("fragtp");
+		FragTrap frag("frag");
 
-		fr4gtp.attack("Handsome Jack");
-		fr4gtp.takeDamage(6);
-		fr4gtp.beRepaired(4);
-		fr4gtp.takeDamage(3);
-		fr4gtp.highFivesGuys();
-		fr4gtp.beRepaired(8);
-		fr4gtp.takeDamage(17);
+		frag.attack("clop");
+		frag.takeDamage(6);
+		frag.beRepaired(4);
+		frag.takeDamage(3);
+		frag.highFivesGuys();
+		frag.beRepaired(8);
+		frag.takeDamage(17);
 	}
 	std::cout << "----------------------------------------" << std::endl;
 	{
-		ScavTrap sc4vtp("scavtp");
+		ScavTrap scav("scav");
 
-		sc4vtp.attack("Handsome Jack");
-		sc4vtp.takeDamage(6);
-		sc4vtp.beRepaired(4);
-		sc4vtp.takeDamage(3);
-		sc4vtp.guardGate();
-		sc4vtp.beRepaired(8);
-		sc4vtp.takeDamage(17);
+		scav.attack("toto");
+		scav.takeDamage(6);
+		scav.beRepaired(4);
+		scav.takeDamage(3);
+		scav.guardGate();
+		scav.beRepaired(8);
+		scav.takeDamage(17);
 	}
 	std::cout << "----------------------------------------" << std::endl;
 	{
-		ClapTrap cl4ptp("claptp");
+		ClapTrap clap("bob");
 
-		cl4ptp.attack("Handsome Jack");
-		cl4ptp.takeDamage(10);
-		cl4ptp.beRepaired(4);
-		cl4ptp.takeDamage(3);
-		cl4ptp.beRepaired(8);
-		cl4ptp.takeDamage(17);
+		clap.attack("Handsome Jack");
+		clap.takeDamage(10);
+		clap.beRepaired(4);
+		clap.takeDamage(3);
+		clap.beRepaired(8);
+		clap.takeDamage(17);
 	}
     return (0);
 }

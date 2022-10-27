@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 15:34:13 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/16 19:56:11 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/27 14:52:13 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class ClapTrap
 		void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
+		const std::string	&getName() const;
 		ClapTrap &		operator=( ClapTrap const & rhs );
 
 	private:
@@ -38,6 +39,6 @@ class ClapTrap
 		int	_damage;
 };
 
-//std::ostream &			operator<<( std::ostream & o, ClapTrap const & i );
+
 
 #endif /* ********************************************************* ClapTrap_H */

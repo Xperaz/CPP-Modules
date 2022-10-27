@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 15:34:13 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/27 11:04:32 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/27 20:22:09 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 
 class ClapTrap
 {
-
 	public:
 		ClapTrap(std::string	name);
 		ClapTrap( ClapTrap const & src );
 		~ClapTrap();
 
+		const std::string	&getName() const;
 		virtual void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);

@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 15:06:16 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/27 14:07:04 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/27 15:01:52 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,11 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	}
 	else
 		std::cout << " don't have enough point to be repaired" << std::endl;
+}
+
+const std::string	&ClapTrap::getName() const
+{
+	return (_name);	
 }
 
 /*
