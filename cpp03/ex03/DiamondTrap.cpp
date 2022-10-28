@@ -13,7 +13,7 @@ DiamondTrap::DiamondTrap(const std::string &name)
 {
 	std::cout << "DiamondTrap parametrized constructor called!" << std::endl;
 	ClapTrap::_name = name + "_clap_name";
-	this->name = name;
+	this->_name = name;
 	this->_hit = FragTrap::_hit;
 	this->_energy = ScavTrap::_energy;
 	this->_damage = FragTrap::_damage;
@@ -44,8 +44,8 @@ DiamondTrap &				DiamondTrap::operator=( DiamondTrap const & rhs )
 {
 	if ( this != &rhs )
 	{
-		this->name = rhs.name;
-		_name = rhs.name;
+		_name = rhs._name;
+		_name = rhs._name;
 		_damage = rhs._damage;
 		_hit = rhs._hit;
 		_energy = rhs._energy;
@@ -59,14 +59,14 @@ DiamondTrap &				DiamondTrap::operator=( DiamondTrap const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-std::string DiamondTrap::getName()
+int DiamondTrap::getName()
 {
-	return (name);
+	return (_damage);
 }
 
 void DiamondTrap::whoAmI()
 {
-	std::cout << this->getName() << std::endl;
+	std::cout << this->getName() << " " << ClapTrap::_name << std::endl;
 }
 
 /*

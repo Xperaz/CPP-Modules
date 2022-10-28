@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 15:04:07 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/27 17:53:59 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/28 12:03:02 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main()
     
 	{
 		DiamondTrap diamond("Diamond");
-
+		std::cout << diamond.getName() << std::endl;
 		diamond.attack("pep");
 		diamond.takeDamage(6);
 		diamond.beRepaired(4);
@@ -34,6 +34,7 @@ int main()
 
 		frag.attack("clop");
 		frag.takeDamage(6);
+		frag.takeDamage(150);
 		frag.beRepaired(4);
 		frag.takeDamage(3);
 		frag.highFivesGuys();

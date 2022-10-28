@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 15:06:16 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/27 15:04:47 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/28 12:01:27 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->_hit > 0)
 		this->_hit -= amount;
-	else
+	
+	if (this->_hit <= 0)
 		std::cout << this->_name << " is dead" << std::endl;
 }
 
