@@ -16,6 +16,11 @@ Bureaucrat::Bureaucrat( const Bureaucrat & src )
 	*this = src;
 }
 
+// Bureaucrat::Bureaucrat(std::string name)
+// 	:name_(name)
+// {
+// }
+
 Bureaucrat::Bureaucrat(unsigned int grade)
 	:name_("clop")
 {

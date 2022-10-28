@@ -11,6 +11,7 @@ class Bureaucrat
 
 		Bureaucrat();
 		Bureaucrat(unsigned int grade);
+		//Bureaucrat(std::string name);
 		Bureaucrat( Bureaucrat const & src );
 		~Bureaucrat();
 		std::string getName() const;
@@ -18,7 +19,6 @@ class Bureaucrat
 		void increment();
 		void decrement();
 
-		void sighnForm();
 		Bureaucrat &		operator=( Bureaucrat const & rhs );
 
 	private:
