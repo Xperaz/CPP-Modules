@@ -7,18 +7,37 @@ class Form
 {
 
 	public:
-
 		Form();
+		Form(const std::string name, const int sgrade, const int exgrade);
 		Form( Form const & src );
 		~Form();
 
 		int getIndicator() const;
 		int getSinedGrade() const;
 		int getExecuteGrade() const;
+		std::string	getName() const;
 
-		void beSigned(Bureaucrat &br);
+		void beSigned(Bureaucrat br);
 
 		Form &		operator=( Form const & rhs );
+
+
+		class GradeTooHighException : public std::exception
+		{
+		private:
+			/* data */
+		public:
+			const char * what() const _NOEXCEPT;
+		};
+
+		class GradeTooLowException : public std::exception
+		{
+		private:
+			/* data */
+		public:
+			const char * what() const _NOEXCEPT;
+		};
+		
 
 	private:
 		const std::string	name_;
@@ -29,6 +48,6 @@ class Form
 
 };
 
-std::ostream &			operator<<( std::ostream & o, Form const & i );
+//std::ostream &			operator<<( std::ostream & o, Form const & i );
 
-#endif /* ************************************************************ FORM_H */
+#endif

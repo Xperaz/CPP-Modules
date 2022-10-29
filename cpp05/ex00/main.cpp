@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:47:48 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/28 16:54:59 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/29 10:49:44 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,25 @@
 
 int main()
 {
-    Bureaucrat  br(2);
-    std::cout << "---------------------------" << std::endl;
-    std::cout << br;
-    std::cout << "---------------------------" << std::endl;
-    br.increment();
-    std::cout << br;
-    std::cout << "---------------------------" << std::endl;
-    br.decrement();
-    std::cout << br;
-    std::cout << "---------------------------" << std::endl;
-    br.increment();
-    std::cout << br;
-    std::cout << "---------------------------" << std::endl;
+    
+   try {
+        Bureaucrat  br(160);
+        std::cout << "---------------------------" << std::endl;
+        std::cout << br;
+        std::cout << "---------------------------" << std::endl;
+        br.increment();
+        std::cout << br;
+        std::cout << "---------------------------" << std::endl;
+        br.decrement();
+        std::cout << br;
+        std::cout << "---------------------------" << std::endl;
+        br.increment();
+        std::cout << br;
+        std::cout << "---------------------------" << std::endl;
+    }
+    catch (const std::exception& myCustomException) {
+        std::cout << myCustomException.what() << std::endl;
+    }
     
     return (0);
 }

@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
@@ -25,17 +26,12 @@ Bureaucrat::Bureaucrat(unsigned int grade)
 	:name_("clop")
 {
 	std::cout << "parmetrized constructor called" << std::endl;
-	try
-	{
-		if (grade > 150 || grade < 1)
-			throw "invalid grade";
-		else
-			grade_ = grade;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	if (grade < 1)
+		throw GradeTooHighException();
+	else if (grade > 150)
+		throw GradeTooLowException();
+	else
+		grade_ = grade;
 }
 
 /*
@@ -82,32 +78,41 @@ int Bureaucrat::getGrade() const
 
 void Bureaucrat::increment()
 {
-	try
-	{
-		if (grade_ > 1)
-			grade_ -= 1;
-		else
-			throw "invalid grade";	
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+
+	if (grade_ > 1)
+		grade_ -= 1;
+	else
+		throw GradeTooHighException();	
+
 }
 
 void Bureaucrat::decrement()
 {
-	try
-	{
-		if (grade_ < 150)
-			grade_ += 1;
-		else
-			throw "invalid grade";	
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	if (grade_ < 150)
+		grade_ += 1;
+	else
+		throw GradeTooLowException();	
+}
+
+
+const char *Bureaucrat::GradeTooHighException::what() const _NOEXCEPT
+{
+        return "Grade Too High";
+}
+
+
+const char *Bureaucrat::GradeTooLowException::what() const _NOEXCEPT
+{
+        return "Grade Too Low";
+}
+
+void	Bureaucrat::signForm(Form &fm)
+{
+	if (fm.getIndicator())
+		std::cout << name_ << " signed " << fm.getName() << std::endl;
+	else
+		std::cout << name_ << " couldn't sign " << fm.getName() << fm.myCustomException.what() << std::endl;
+
 }
 
 /*

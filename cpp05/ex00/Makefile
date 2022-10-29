@@ -6,17 +6,16 @@
 #    By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/28 15:49:34 by aouhadou          #+#    #+#              #
-#    Updated: 2022/10/28 18:41:18 by aouhadou         ###   ########.fr        #
+#    Updated: 2022/10/29 10:48:29 by aouhadou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-HEADER= Bureaucrat.hpp Form.hpp
-
+HEADER= Bureaucrat.hpp 
 CC = c++
 
 FLAGS= -std=c++98 -Wall -Wextra -Werror
 
-SRCS = main.cpp Bureaucrat.cpp Form.cpp\
+SRCS = main.cpp Bureaucrat.cpp\
 
 NAME=Bureaucrat
 
