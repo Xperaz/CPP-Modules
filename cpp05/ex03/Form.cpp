@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 11:45:43 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/30 22:36:00 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/30 13:05:21 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 */
 
 Form::Form()
-	:name_("pop"), indicator_(false), s_grade_(1), ex_grade_(1)
+	:name_("pop"), s_grade_(0), ex_grade_(0)
 {
 }
 
@@ -111,6 +111,8 @@ int	Form::getSinedGrade() const
 {
 	return (s_grade_);
 }
+
+
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

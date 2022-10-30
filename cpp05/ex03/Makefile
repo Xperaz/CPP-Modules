@@ -6,19 +6,19 @@
 #    By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/28 15:49:34 by aouhadou          #+#    #+#              #
-#    Updated: 2022/10/29 15:13:58 by aouhadou         ###   ########.fr        #
+#    Updated: 2022/10/30 11:58:26 by aouhadou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-HEADER= Bureaucrat.hpp Form.hpp
+HEADER= Bureaucrat.hpp Form.hpp  ShrubberyCreationForm.hpp
 
 CC = c++
 
 FLAGS= -std=c++98 -Wall -Wextra -Werror
 
-SRCS = main.cpp Bureaucrat.cpp Form.cpp\
+SRCS = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp
 
-NAME=Form
+NAME=28B
 
 OBJ=$(SRCS:.cpp=.o)
 

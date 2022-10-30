@@ -9,7 +9,7 @@ class Bureaucrat
 
 	public:
 		Bureaucrat();
-		Bureaucrat(unsigned int grade);
+		Bureaucrat(int grade, std::string name);
 		//Bureaucrat(std::string name);
 		Bureaucrat( Bureaucrat const & src );
 		~Bureaucrat();

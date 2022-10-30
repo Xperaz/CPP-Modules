@@ -5,7 +5,7 @@
 */
 
 Bureaucrat::Bureaucrat()
-	:name_("clop")
+	:name_("clop"), grade_(2)
 {
 	std::cout << "default constructor called" << std::endl;
 }
@@ -21,8 +21,8 @@ Bureaucrat::Bureaucrat( const Bureaucrat & src )
 // {
 // }
 
-Bureaucrat::Bureaucrat(unsigned int grade)
-	:name_("clop")
+Bureaucrat::Bureaucrat(int grade, std::string name)
+	:name_(name)
 {
 	std::cout << "parmetrized constructor called" << std::endl;
 	if (grade < 1)

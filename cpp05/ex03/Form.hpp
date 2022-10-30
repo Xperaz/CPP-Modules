@@ -19,6 +19,7 @@ class Form
 
 		void beSigned(Bureaucrat br);
 
+		virtual	void	execute(Bureaucrat const & executor) const;
 		Form &		operator=( Form const & rhs );
 
 
