@@ -5,6 +5,7 @@
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
+class Form;
 
 class ShrubberyCreationForm : public Form
 {
@@ -26,9 +27,9 @@ class ShrubberyCreationForm : public Form
 	private:
 		int sign_;
 		int exec_;
+		std::string	target_;
 
 };
 
-//std::ostream &			operator<<( std::ostream & o, ShrubberyCreationForm const & i );
 
 #endif /* ******************************************* SHRUBBERYCREATIONFORM_H */

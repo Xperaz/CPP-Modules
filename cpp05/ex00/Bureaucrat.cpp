@@ -16,11 +16,6 @@ Bureaucrat::Bureaucrat( const Bureaucrat & src )
 	*this = src;
 }
 
-// Bureaucrat::Bureaucrat(std::string name)
-// 	:name_(name)
-// {
-// }
-
 Bureaucrat::Bureaucrat(int grade, std::string name)
 	:name_(name)
 {

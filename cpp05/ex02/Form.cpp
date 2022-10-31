@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 11:45:43 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/30 13:05:21 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/31 11:31:01 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 */
 
 Form::Form()
-	:name_("pop"), s_grade_(0), ex_grade_(0)
+	:name_("pop"), indicator_(false), s_grade_(1), ex_grade_(1)
 {
 }
 
@@ -75,10 +75,10 @@ std::ostream &			operator<<( std::ostream & o, Form const & i )
 
 void	Form::beSigned(Bureaucrat br)
 {
-	if (br.getGrade() <= 150)
+	if (br.getGrade() <= s_grade_)
 		indicator_ = true;
 	else
-		indicator_ = false;
+		throw GradeTooLowException();
 }
 
 const char *Form::GradeTooHighException::what() const _NOEXCEPT
@@ -111,8 +111,6 @@ int	Form::getSinedGrade() const
 {
 	return (s_grade_);
 }
-
-
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

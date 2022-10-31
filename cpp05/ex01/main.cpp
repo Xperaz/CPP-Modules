@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:47:48 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/30 22:36:47 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/10/31 10:49:28 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@
 int main()
 {
     try {
-        Bureaucrat br(100);
-        Form  fr("clop", 110, 100);
+        Bureaucrat br(140, "per");
+        Form  fr("clop", 150, 100);
         std::cout << "---------------------------" << std::endl;
         std::cout << fr;
-        fr.beSigned(br);
         std::cout << "---------------------------" << std::endl;
         br.signForm(fr);
         std::cout << fr;

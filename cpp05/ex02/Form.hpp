@@ -2,6 +2,7 @@
 # define FORM_HPP
 
 #include "Bureaucrat.hpp"
+class Bureaucrat;
 
 class Form
 {
@@ -10,7 +11,7 @@ class Form
 		Form();
 		Form(const std::string name, const int sgrade, const int exgrade);
 		Form( Form const & src );
-		~Form();
+		virtual ~Form();
 
 		int getIndicator() const;
 		int getSinedGrade() const;
@@ -18,8 +19,8 @@ class Form
 		std::string	getName() const;
 
 		void beSigned(Bureaucrat br);
+		virtual void	execute(Bureaucrat const & executor) const = 0;
 
-		virtual	void	execute(Bureaucrat const & executor) const;
 		Form &		operator=( Form const & rhs );
 
 

@@ -7,7 +7,7 @@ class Form;
 */
 
 Bureaucrat::Bureaucrat()
-	:name_("clop")
+	:name_("clop"), grade_(2)
 {
 	std::cout << "default constructor called" << std::endl;
 }
@@ -18,8 +18,8 @@ Bureaucrat::Bureaucrat( const Bureaucrat & src )
 	*this = src;
 }
 
-Bureaucrat::Bureaucrat(unsigned int grade)
-	:name_("clop")
+Bureaucrat::Bureaucrat(int grade, std::string name)
+	:name_(name)
 {
 	std::cout << "parmetrized constructor called" << std::endl;
 	if (grade < 1)
@@ -102,16 +102,12 @@ const char *Bureaucrat::GradeTooLowException::what() const _NOEXCEPT
         return "Grade Too Low";
 }
 
-void	Bureaucrat::signForm(const Form &fm) const
+void	Bureaucrat::signForm(Form &fm)
 {
 	try
 	{
-		if (fm.getIndicator() == true)
-			std::cout << name_ << " signed " << fm.getName() << std::endl;
-		else if (fm.getExecuteGrade() <= 0 || fm.getSinedGrade() <= 0)
-			throw GradeTooHighException();
-		else if (fm.getExecuteGrade() > 150 || fm.getSinedGrade() > 150)
-			throw GradeTooLowException();
+		fm.beSigned(*this);
+		std::cout << name_ << " signed " << fm.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{

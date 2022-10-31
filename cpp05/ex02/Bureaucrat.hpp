@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string>
+#include <fstream>
 #include "form.h"
 
 class Form;
@@ -12,31 +13,30 @@ class Bureaucrat
 
 	public:
 		Bureaucrat();
-		Bureaucrat(unsigned int grade);
+		Bureaucrat(int grade, std::string name);
 		Bureaucrat( Bureaucrat const & src );
 		~Bureaucrat();
+
 		std::string getName() const;
 		int getGrade() const;
 		void increment();
 		void decrement();
-		void	signForm(const Form &fm) const;
+		void	signForm(Form &fm);
 
 		Bureaucrat &		operator=( Bureaucrat const & rhs );
 
+		void	executeForm(Form const & form);
+
 		class GradeTooHighException : public std::exception
 		{
-		private:
-			/* data */
-		public:
-			const char * what() const _NOEXCEPT;
+			public:
+				const char * what() const _NOEXCEPT;
 		};
 
 		class GradeTooLowException : public std::exception
 		{
-		private:
-			/* data */
-		public:
-			const char * what() const _NOEXCEPT;
+			public:
+				const char * what() const _NOEXCEPT;
 		};
 		
 	private:
