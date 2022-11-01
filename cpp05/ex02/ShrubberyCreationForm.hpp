@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/01 10:36:38 by aouhadou          #+#    #+#             */
+/*   Updated: 2022/11/01 17:19:48 by aouhadou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
 
@@ -17,17 +29,23 @@ class ShrubberyCreationForm : public Form
 		ShrubberyCreationForm( ShrubberyCreationForm const & src );
 		~ShrubberyCreationForm();
 
-		void beSigned(Bureaucrat br);
 		void	execute(Bureaucrat const & executor) const;
-		int	getSign() const;
-		int getExec() const;
 
 		ShrubberyCreationForm &		operator=( ShrubberyCreationForm const & rhs );
 
-	private:
-		int sign_;
-		int exec_;
-		std::string	target_;
+		class GradeNotHighEnoughException : public std::exception
+		{
+		public:
+			const char * what() const _NOEXCEPT;
+		};
+
+		class NotSignedException : public std::exception
+		{
+		public:
+			const char * what() const _NOEXCEPT;
+		};
+		private:
+			std::string	target_;
 
 };
 

@@ -6,12 +6,13 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 11:53:32 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/31 20:11:13 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/01 12:37:47 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
@@ -22,7 +23,7 @@ ShrubberyCreationForm::ShrubberyCreationForm()
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
-	:sign_(145), exec_(137), target_(target)
+	: Form(target, 145, 137), target_(target)
 {
 }
 
@@ -50,8 +51,7 @@ ShrubberyCreationForm &				ShrubberyCreationForm::operator=( ShrubberyCreationFo
 {
 	if ( this != &rhs )
 	{
-		sign_ = rhs.sign_;
-		exec_ = rhs.exec_;
+		target_ = rhs.target_;
 	}
 	return *this;
 }
@@ -61,38 +61,37 @@ ShrubberyCreationForm &				ShrubberyCreationForm::operator=( ShrubberyCreationFo
 ** --------------------------------- METHODS ----------------------------------
 */
 
-int ShrubberyCreationForm::getSign() const
+const char *ShrubberyCreationForm::NotSignedException::what() const _NOEXCEPT
 {
-	return (sign_);
+	return ("Form not signed!");
 }
 
-int ShrubberyCreationForm::getExec() const
+const char *ShrubberyCreationForm::GradeNotHighEnoughException::what() const _NOEXCEPT
 {
-	return (exec_);
+	return ("Grade Not high enough!");
 }
 
 void	ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
-	try
-	{
-		if (Form::getIndicator() == true && Form::getExecuteGrade() == exec_)
-		{
-			Bureaucrat::executor.signForm(*this);
-			std::ofstream outfile;
-			//target_ += "_shrubbery";
-			outfile.open(target_);
-			outfile << "ascii tree" << std::endl;
-			outfile.close();
-		}
-		else
-			throw GradeTooHighException();
-			 
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
+	if (getIndicator() == false)
+		throw NotSignedException();
+	else if (executor.getGrade() > getExecuteGrade())
+		throw GradeNotHighEnoughException();
+	std::ofstream outfile;
+	std::string file = target_;
+	file += "_shrubbery";
+	outfile.open(file);
+	outfile << "           ,@@@@@@@," << std::endl
+                << "   ,,,.   ,@@@@@@/@@,  .oo8888o." << std::endl
+                << ",&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o" << std::endl
+                << ",%&\%&&%&&%,@@@\\@@@/@@@88\\88888/88'" << std::endl
+                   << "%&&%&%&/%&&%@@\\@@/ /@@@88888\\88888'" << std::endl
+                << "%&&%/ %&%%&&@@\\ V /@@' `88\\8 `/88'" << std::endl
+                   << "`&%\\ ` /%&'    |.|        \\ '|8'" << std::endl
+                << "    |o|        | |         | |" << std::endl
+                << "    |.|        | |         | |" << std::endl
+                << " \\/ ._\\/\\/_/__/  ,\\_//__\\/.  \\_//__/_";
+	outfile.close();
 }
 
 /*

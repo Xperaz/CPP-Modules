@@ -6,17 +6,19 @@
 #    By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/28 15:49:34 by aouhadou          #+#    #+#              #
-#    Updated: 2022/10/31 11:08:01 by aouhadou         ###   ########.fr        #
+#    Updated: 2022/11/01 19:47:41 by aouhadou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-HEADER= Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp
+HEADER= Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp \
+		RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 
 CC = c++
 
 FLAGS= -std=c++98 -Wall -Wextra -Werror
 
-SRCS = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp
+SRCS = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp \
+		RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 NAME=28B
 

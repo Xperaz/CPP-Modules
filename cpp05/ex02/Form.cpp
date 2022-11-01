@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 11:45:43 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/10/31 11:31:01 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/01 17:34:37 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,9 @@ int	Form::getSinedGrade() const
 	return (s_grade_);
 }
 
+// void	Form::setExec(int sgrade)
+// {
+// }
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
