@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/02 20:42:54 by aouhadou          #+#    #+#             */
+/*   Updated: 2022/11/02 20:43:00 by aouhadou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
@@ -10,7 +22,6 @@ class Bureaucrat
 	public:
 		Bureaucrat();
 		Bureaucrat(int grade, std::string name);
-		//Bureaucrat(std::string name);
 		Bureaucrat( Bureaucrat const & src );
 		~Bureaucrat();
 		std::string getName() const;

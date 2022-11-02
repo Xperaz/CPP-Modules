@@ -6,7 +6,7 @@
 #    By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/23 14:42:49 by aouhadou          #+#    #+#              #
-#    Updated: 2022/10/26 09:41:07 by aouhadou         ###   ########.fr        #
+#    Updated: 2022/10/29 18:09:32 by aouhadou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ FLAGS= -std=c++98 -Wall -Wextra -Werror
 
 SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp\
 
-NAME=fire
+NAME=abstract
 
 OBJ=$(SRCS:.cpp=.o)
 

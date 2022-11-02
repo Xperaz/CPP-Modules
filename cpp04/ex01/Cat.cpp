@@ -42,6 +42,8 @@ Cat &				Cat::operator=( Cat const & rhs )
 		type = rhs.type;
 		delete br;
 		Brain *temp = new(std::nothrow) Brain();
+		if (!br)
+			std::cout << "cat can't have new brain" << std::endl;
 		temp = rhs.br;
 		br = temp;
 	}
