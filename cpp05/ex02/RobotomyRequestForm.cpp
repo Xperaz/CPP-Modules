@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 12:58:34 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/01 20:05:05 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/02 13:43:31 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ RobotomyRequestForm::RobotomyRequestForm()
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string	target)
-	:Form(target, 72, 45), target_(target)
+	:Form("RobotomyRequestForm", 72, 45), target_(target)
 {
 	
 }

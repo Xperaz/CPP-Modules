@@ -11,7 +11,7 @@ PresidentialPardonForm::PresidentialPardonForm()
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target)
-	:Form(target, 25, 5), target_(target)
+	:Form("PresidentialPardonForm", 25, 5), target_(target)
 {
 }
 

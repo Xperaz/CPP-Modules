@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 11:53:32 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/01 12:37:47 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/02 13:43:45 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ShrubberyCreationForm::ShrubberyCreationForm()
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
-	: Form(target, 145, 137), target_(target)
+	: Form("ShrubberyCreationForm", 145, 137), target_(target)
 {
 }
 

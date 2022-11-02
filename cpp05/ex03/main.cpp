@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:47:48 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/01 20:07:41 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/02 13:40:54 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,48 +15,28 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
-
+#include "Intern.hpp"
 
 int main()
 {
     {
-        try {
-                Bureaucrat  br(15, "br_one");
-                ShrubberyCreationForm p("Shrubbery");
-                br.signForm(p);
-                br.executeForm(p);
-        }
-        catch (const std::exception& myCustomException) {
-            std::cout << myCustomException.what() << std::endl;
-        }
+        Intern someRandomIntern;
+        Form* rrf;
+        rrf = someRandomIntern.makeForm("robotomy request", "Bender");
     }
+    std::cout << "----------------------------------------" << std::endl;
     
-    std::cout << "---------------------------------------------" << std::endl;
+    {
+        Intern intern2;
+        Form* scf;
+        scf = intern2.makeForm("shrubbery creation", "jdnk");
+    }
 
+   std::cout << "----------------------------------------" << std::endl;
     {
-        try {
-        Bureaucrat  br(45, "br_two");
-        RobotomyRequestForm p("Robotomy");
-        br.signForm(p);
-        br.executeForm(p);
-        }
-        catch (const std::exception& myCustomException) {
-            std::cout << myCustomException.what() << std::endl;
-        }
-    }
-    
-    std::cout << "---------------------------------------------" << std::endl;
-    
-    {
-        try {
-        Bureaucrat  br(5, "br_three");
-        PresidentialPardonForm p("Presidential");
-        br.signForm(p);
-        br.executeForm(p);
-        }
-        catch (const std::exception& myCustomException) {
-            std::cout << myCustomException.what() << std::endl;
-        }
+        Intern intern3;
+        Form* ppf;
+        ppf = intern3.makeForm("presidential pardon", "hdhhdh");
     }
     
     return (0);
