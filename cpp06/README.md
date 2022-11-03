@@ -53,10 +53,12 @@
             Test obj(3);
 
             //implicit conversion
+            
             std::string str1 = obj;// conversion operator
             obj = 20;// constructor coversion
 
             // static_cast conversion
+            
             std::string str2 = static_cast<std::string> (obj);
             obj = static_cast<Test> (30);
 
@@ -97,8 +99,11 @@
         int main()
         {
             Derived d1;
+            
             Base *p1 = (Base*)&d1;//Allowed at compile-time
+            
             Base *p2 = static_cast<Base*>(&d1);//Not allowed at compile-time
+            
             return (0);
         }
 
@@ -129,8 +134,10 @@
             Base *p2 = static_cast<Base*>(&d2);// OK
 
             //The problem lies here, after type casting we are coming back, when we are back we are just switching
+            
             Derived1 *dp1 = static_cast<Derived1*>(p2);// Dervid1 hold derived2
             Derived2 *dp2 = static_cast<Derived2*>(p1);//Dervid2 hold derived1
+            
             //this code compiled sucssesfully, but with unwanted values
             //So never use static_cast if you don't know  your pointer is holding
             return (0);
@@ -166,3 +173,9 @@
 
     5. Use for all up-cast but never use for confused down-cast because there are no runtime checks performed
     for static_cast conversions.
+    
+    6. Intensions are more clear in C++ style cast (express your intent better and make code review easier).
+
+    7. Finding is easy
+   
+    8. Error found at compile-time.
