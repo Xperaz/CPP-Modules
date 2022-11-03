@@ -44,7 +44,7 @@ is called implicitly, so there’s no return value to be checked.
      This is an important guarantee for a function like what,
      is usually called in exception handling: you don't want another exception to be thrown while you're trying to handle one.
      
-     Eample of an exception: hrow std::invalid_argument("error");
+     Eample of an exception: throw std::invalid_argument("error");
     
 
 
