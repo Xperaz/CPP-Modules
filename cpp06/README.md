@@ -53,10 +53,12 @@
             Test obj(3);
 
             //implicit conversion
+            
             std::string str1 = obj;// conversion operator
             obj = 20;// constructor coversion
 
             // static_cast conversion
+            
             std::string str2 = static_cast<std::string> (obj);
             obj = static_cast<Test> (30);
 
@@ -97,22 +99,79 @@
         int main()
         {
             Derived d1;
+            
             Base *p1 = (Base*)&d1;//Allowed at compile-time
+            
             Base *p2 = static_cast<Base*>(&d1);//Not allowed at compile-time
+            
             return (0);
         }
 
   5) Use for all upcasts, but never use for confused down cast.
 
-        It is the process to create the derived class's pointer or reference from the base class's pointer or
+        Upcasts, It is the process to create the derived class's pointer or reference from the base class's pointer or
 
         reference.
+        explicit type cast not required in Upcasting (parent_obj = &child_obj)
 
         The Downcasting is an opposite process to the upcasting, which converts the base class's pointer or reference
 
         to the derived class's pointer or reference.
 
-## code example
+        explicit type cast is required in downcasting  (chile_obj = (Child *) &parent_obj).
+
+## code example for up and down cast
+
+        #include <iostream>  
+        using namespace std;  
+
+        class Parent {  
+            private:  
+                int id;  
+
+            public:  
+                void showid ()  
+                {  
+                    cout << " I am in the Parent class " << endl;  
+                    }     
+        };  
+
+        class Myson : public Parent {  
+            public:  
+                void disp ()  
+                {  
+                    cout << " I am in the Myson class " << endl;  
+                }  
+        };  
+
+        int main ( int argc, char * argv[])  
+        {  
+            // create object of the Parent class  
+            Parent par_obj;  
+
+            // create object of the Myson class  
+            Myson my_obj;  
+
+            // upcast - here upcasting can be done implicitly  
+            Parent *ptr1 = &my_obj; // base class's reference the derive class's object  
+
+            // downcast - here typecasting is done explicitly   
+            Myson *ptr2 = (Myson *) &par_obj;  
+
+            // Upcasting is safe:  
+            ptr1->showid();  
+            ptr2->showid();  
+
+
+            // downcasting is unsafe:  
+            ptr2->disp();  
+
+            getchar();  
+            return 0;
+
+        }  
+
+## code example for the confused down cast
 
         #include <iostream>
 
@@ -129,8 +188,10 @@
             Base *p2 = static_cast<Base*>(&d2);// OK
 
             //The problem lies here, after type casting we are coming back, when we are back we are just switching
+            
             Derived1 *dp1 = static_cast<Derived1*>(p2);// Dervid1 hold derived2
             Derived2 *dp2 = static_cast<Derived2*>(p1);//Dervid2 hold derived1
+            
             //this code compiled sucssesfully, but with unwanted values
             //So never use static_cast if you don't know  your pointer is holding
             return (0);
@@ -166,3 +227,9 @@
 
     5. Use for all up-cast but never use for confused down-cast because there are no runtime checks performed
     for static_cast conversions.
+    
+    6. Intensions are more clear in C++ style cast (express your intent better and make code review easier).
+
+    7. Finding is easy
+   
+    8. Error found at compile-time.
