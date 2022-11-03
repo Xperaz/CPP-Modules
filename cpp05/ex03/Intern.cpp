@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 09:29:47 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/02 14:35:06 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:32:47 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ Intern &				Intern::operator=( Intern const & rhs )
 	return *this;
 }
 
-const char *Intern::FormNotCreated::what() const _NOEXCEPT
+const char *Intern::FormNotCreated::what() const throw()
 {
 	return ("Form not created");
 }
@@ -87,14 +87,16 @@ Form	*Intern::makeForm(std::string formName, std::string target)
 		std::string names[3] = {"robotomy request", "shrubbery creation", "presidential pardon"};
 	
 		i = 0;
+		Form* tmp;
 		while (i < 3)
 		{
-			Form* tmp = (this->*forms[i])(target);
+			tmp = (this->*forms[i])(target);
 			if (formName == names[i])
 			{
 				std::cout << "Intern Creates " << tmp->getName() << std::endl;
 				return (tmp);
 			}
+			delete tmp;
 			i++;
 		}
 		while (i == 3)

@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 12:58:34 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/02 13:43:31 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:35:24 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ RobotomyRequestForm::RobotomyRequestForm()
 RobotomyRequestForm::RobotomyRequestForm(std::string	target)
 	:Form("RobotomyRequestForm", 72, 45), target_(target)
 {
-	
 }
 
 RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src )
@@ -33,15 +32,14 @@ RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src )
 	*this = src;
 }
 
-
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
+	// std::cout << "Robotomy Request destructor called" << std::endl;
 }
-
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
@@ -60,12 +58,12 @@ RobotomyRequestForm &				RobotomyRequestForm::operator=( RobotomyRequestForm con
 ** --------------------------------- METHODS ----------------------------------
 */
 
-const char *RobotomyRequestForm::NotSignedException::what() const _NOEXCEPT
+const char *RobotomyRequestForm::NotSignedException::what() const throw()
 {
 	return ("Form not signed!");
 }
 
-const char *RobotomyRequestForm::GradeNotHighEnoughException::what() const _NOEXCEPT
+const char *RobotomyRequestForm::GradeNotHighEnoughException::what() const throw()
 {
 	return ("Grade Not high enough!");
 }

@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 20:44:36 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/02 20:44:37 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:22:48 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ class RobotomyRequestForm : public Form
 		class GradeNotHighEnoughException : public std::exception
 		{
 		public:
-			const char * what() const _NOEXCEPT;
+			const char * what() const throw();
 		};
 
 		class NotSignedException : public std::exception
 		{
 		public:
-			const char * what() const _NOEXCEPT;
+			const char * what() const throw();
 		};
 
 	private:

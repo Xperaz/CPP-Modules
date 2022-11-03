@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 11:53:32 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/02 13:43:45 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:43:34 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,12 @@ ShrubberyCreationForm &				ShrubberyCreationForm::operator=( ShrubberyCreationFo
 ** --------------------------------- METHODS ----------------------------------
 */
 
-const char *ShrubberyCreationForm::NotSignedException::what() const _NOEXCEPT
+const char *ShrubberyCreationForm::NotSignedException::what() const throw()
 {
 	return ("Form not signed!");
 }
 
-const char *ShrubberyCreationForm::GradeNotHighEnoughException::what() const _NOEXCEPT
+const char *ShrubberyCreationForm::GradeNotHighEnoughException::what() const throw()
 {
 	return ("Grade Not high enough!");
 }

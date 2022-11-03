@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:47:48 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/02 14:37:57 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:37:10 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main()
     {
         Intern intern2;
         Form* scf;
-        scf = intern2.makeForm("shrubbery creation", "jdnk");
+        scf = intern2.makeForm("shrubbery creation", "flap");
         delete scf;
     }
 
@@ -38,9 +38,8 @@ int main()
     {
         Intern intern3;
         Form* ppf;
-        ppf = intern3.makeForm("presidential pardon", "hdhhdh");
+        ppf = intern3.makeForm("presidential pardon", "pep");
         delete ppf;
     }
-    system("leaks coffee-making");
     return (0);
 }

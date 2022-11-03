@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 20:43:57 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/02 20:43:58 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:15:09 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ class PresidentialPardonForm : public Form
 		class GradeNotHighEnoughException : public std::exception
 		{
 		public:
-			const char * what() const _NOEXCEPT;
+			const char * what() const throw();
 		};
 
 		class NotSignedException : public std::exception
 		{
 		public:
-			const char * what() const _NOEXCEPT;
+			const char * what() const throw();
 		};
 
 	private:

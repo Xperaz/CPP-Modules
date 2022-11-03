@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 20:44:26 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/02 20:44:27 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:35:32 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm & s
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
+	// std::cout << "Presidential Pardon destructor called" << std::endl;
 }
 
 
@@ -60,12 +61,12 @@ PresidentialPardonForm &	PresidentialPardonForm::operator=( PresidentialPardonFo
 ** --------------------------------- METHODS ----------------------------------
 */
 
-const char *PresidentialPardonForm::NotSignedException::what() const _NOEXCEPT
+const char *PresidentialPardonForm::NotSignedException::what() const throw()
 {
 	return ("Form not signed!");
 }
 
-const char *PresidentialPardonForm::GradeNotHighEnoughException::what() const _NOEXCEPT
+const char *PresidentialPardonForm::GradeNotHighEnoughException::what() const throw()
 {
 	return ("Grade Not high enough!");
 }

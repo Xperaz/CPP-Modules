@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 10:36:38 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/01 17:19:48 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:23:24 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ class ShrubberyCreationForm : public Form
 		class GradeNotHighEnoughException : public std::exception
 		{
 		public:
-			const char * what() const _NOEXCEPT;
+			const char * what() const throw();
 		};
 
 		class NotSignedException : public std::exception
 		{
 		public:
-			const char * what() const _NOEXCEPT;
+			const char * what() const throw();
 		};
 		private:
 			std::string	target_;

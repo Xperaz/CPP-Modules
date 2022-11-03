@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 20:43:53 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/02 20:43:54 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:16:37 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,12 @@ PresidentialPardonForm &	PresidentialPardonForm::operator=( PresidentialPardonFo
 ** --------------------------------- METHODS ----------------------------------
 */
 
-const char *PresidentialPardonForm::NotSignedException::what() const _NOEXCEPT
+const char *PresidentialPardonForm::NotSignedException::what() const throw()
 {
 	return ("Form not signed!");
 }
 
-const char *PresidentialPardonForm::GradeNotHighEnoughException::what() const _NOEXCEPT
+const char *PresidentialPardonForm::GradeNotHighEnoughException::what() const throw()
 {
 	return ("Grade Not high enough!");
 }
@@ -74,7 +74,7 @@ void	PresidentialPardonForm::execute(const Bureaucrat &executor) const
 {
 	if (getIndicator() == false)
 		throw NotSignedException();
-	else if (executor.getGrade() > getExecuteGrade())
+	if (executor.getGrade() > getExecuteGrade())
 		throw GradeNotHighEnoughException();
 	std::cout << target_ << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }

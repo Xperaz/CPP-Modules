@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 12:58:34 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/02 13:43:31 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:17:20 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,13 @@ RobotomyRequestForm &				RobotomyRequestForm::operator=( RobotomyRequestForm con
 ** --------------------------------- METHODS ----------------------------------
 */
 
-const char *RobotomyRequestForm::NotSignedException::what() const _NOEXCEPT
+const char *RobotomyRequestForm::NotSignedException::what() const throw()
 {
+	
 	return ("Form not signed!");
 }
 
-const char *RobotomyRequestForm::GradeNotHighEnoughException::what() const _NOEXCEPT
+const char *RobotomyRequestForm::GradeNotHighEnoughException::what() const throw()
 {
 	return ("Grade Not high enough!");
 }
@@ -76,7 +77,7 @@ void	RobotomyRequestForm::execute(const Bureaucrat &executor) const
 		throw NotSignedException();
 	else if (executor.getGrade() > getExecuteGrade())
 		throw GradeNotHighEnoughException();
-	srand(time(NULL));
+	std::srand(time(NULL));
 	int state = std::rand() % 10 + 1;
 	if (state % 2 == 0)
 		std::cout << target_ << " has been robotomized successfully 50\% of the time " << std::endl;

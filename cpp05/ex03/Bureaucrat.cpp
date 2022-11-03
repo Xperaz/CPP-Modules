@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 10:36:34 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/01 11:47:58 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:20:40 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,13 +103,13 @@ void Bureaucrat::decrement()
 }
 
 
-const char *Bureaucrat::GradeTooHighException::what() const _NOEXCEPT
+const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
         return "Grade Too High";
 }
 
 
-const char *Bureaucrat::GradeTooLowException::what() const _NOEXCEPT
+const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
         return "Grade Too Low";
 }

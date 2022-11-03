@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 20:42:50 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/02 20:42:51 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:19:18 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 */
 
 Bureaucrat::Bureaucrat()
-	:name_("clop"), grade_(2)
+	:name_("clop"), grade_(20)
 {
 	std::cout << "default constructor called" << std::endl;
 }
@@ -101,13 +101,13 @@ void Bureaucrat::decrement()
 }
 
 
-const char *Bureaucrat::GradeTooHighException::what() const _NOEXCEPT
+const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
         return "Grade Too High";
 }
 
 
-const char *Bureaucrat::GradeTooLowException::what() const _NOEXCEPT
+const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
         return "Grade Too Low";
 }

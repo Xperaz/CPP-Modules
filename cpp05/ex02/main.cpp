@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:47:48 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/01 20:07:41 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/03 17:55:04 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ int main()
     
     {
         try {
-        Bureaucrat  br(5, "br_three");
-        PresidentialPardonForm p("Presidential");
-        br.signForm(p);
-        br.executeForm(p);
+                Bureaucrat  br(1, "br_three");
+                PresidentialPardonForm p("Presidential");
+                br.signForm(p);
+                br.executeForm(p);
         }
         catch (const std::exception& myCustomException) {
             std::cout << myCustomException.what() << std::endl;

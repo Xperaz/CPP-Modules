@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 10:36:50 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/01 12:04:00 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:15:17 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class Form
 		private:
 			/* data */
 		public:
-			const char * what() const _NOEXCEPT;
+			const char * what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception
@@ -49,7 +49,7 @@ class Form
 		private:
 			/* data */
 		public:
-			const char * what() const _NOEXCEPT;
+			const char * what() const throw();
 		};
 		
 

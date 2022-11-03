@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 20:44:17 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/02 20:44:18 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:20:51 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ class Bureaucrat
 		class GradeTooHighException : public std::exception
 		{
 			public:
-				const char * what() const _NOEXCEPT;
+				const char * what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				const char * what() const _NOEXCEPT;
+				const char * what() const throw();
 		};
 		
 	private:

@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 11:45:43 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/01 17:34:37 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:16:24 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Form::Form()
 Form::Form(const std::string name ,const int sgrade, const int exgrade)
 	:name_(name), s_grade_(sgrade), ex_grade_(exgrade)
 {
+	indicator_ = false;
 	if (s_grade_ <= 0 || ex_grade_ <= 0)
 		throw GradeTooHighException();
 	else if (s_grade_ > 150 || ex_grade_ >150)
@@ -81,13 +82,13 @@ void	Form::beSigned(Bureaucrat br)
 		throw GradeTooLowException();
 }
 
-const char *Form::GradeTooHighException::what() const _NOEXCEPT
+const char *Form::GradeTooHighException::what() const throw()
 {
 	return ("Too High");
 }
 
 
-const char *Form::GradeTooLowException::what() const _NOEXCEPT
+const char *Form::GradeTooLowException::what() const throw()
 {
 	return ("Too Low");
 }
@@ -112,9 +113,6 @@ int	Form::getSinedGrade() const
 	return (s_grade_);
 }
 
-// void	Form::setExec(int sgrade)
-// {
-// }
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
