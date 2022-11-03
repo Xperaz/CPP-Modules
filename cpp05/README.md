@@ -22,7 +22,7 @@ is called implicitly, so there’s no return value to be checked.
 
 # ostream operator overloading?
 
-  Output streams use the insertion (<<) operator for standard types. You can also overload the << operator for your own classes.
+  **Output** streams use the insertion (<<) operator for standard types. You can also overload the << operator for your own classes.
   ## Remarks
     
     The overloaded operator returns a reference to the original ostream object, which means you can combine insertions.
@@ -30,9 +30,11 @@ is called implicitly, so there’s no return value to be checked.
     cout <<"The date is" <<dt <<flush;
     
     
-    The obj can be copied (potentially). But what if it is expensive to copy. So best to pass it by reference to prevent an unnecessary copy.
+    The (obj) can be copied (potentially). But what if it is expensive to copy. 
+    So best to pass it by reference to prevent an unnecessary copy.
     
-    The out is of type std::ostream. This can not be copied (the copy constructor is disabled). So you need to pass by reference.
+    The (out) is of type std::ostream. This can not be copied (the copy constructor is disabled).
+    So you need to pass by reference.
     
     
 
