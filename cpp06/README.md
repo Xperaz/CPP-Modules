@@ -104,7 +104,7 @@
 
   5) Use for all upcasts, but never use for confused down cast.
 
-        It is the process to create the derived class's pointer or reference from the base class's pointer or
+        Upcasts, It is the process to create the derived class's pointer or reference from the base class's pointer or
 
         reference.
 
