@@ -36,6 +36,7 @@ is called implicitly, so there’s no return value to be checked.
     The (out) is of type std::ostream. This can not be copied (the copy constructor is disabled).
     So you need to pass by reference.
     
+    throw std::invalid_argument("error"); => trying to throw a exception message.
     
 
 
