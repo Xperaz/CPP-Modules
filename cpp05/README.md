@@ -36,7 +36,15 @@ is called implicitly, so there’s no return value to be checked.
     The (out) is of type std::ostream. This can not be copied (the copy constructor is disabled).
     So you need to pass by reference.
     
-    throw std::invalid_argument("error"); => trying to throw a exception message.
+ ## what() overloaded function?
+ 
+     syntax: const char * what() const throw();
+     its a virtaul function in exception class.
+     (throw) at the end of function means : It means it won't throw any exceptions.
+     This is an important guarantee for a function like what,
+     is usually called in exception handling: you don't want another exception to be thrown while you're trying to handle one.
+     
+     Eample of an exception: throw std::invalid_argument("error");
     
 
 
