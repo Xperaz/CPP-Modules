@@ -6,7 +6,7 @@
 
         Because this kind of casting happen at compile time,
 
-        And C style cast is hard to find in code, but your can sreach static_cast keyword
+        And C style cast is hard to find in code, but you can sreach static_cast keyword
 
 ## code example
 
