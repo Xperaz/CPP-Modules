@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 20:16:08 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/04 14:49:00 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/04 14:52:09 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 void	to_int(std::string arg)
 {
 	int interger = std::atoi(arg.c_str());
+	
 	if (interger == 0 && arg != "0")
 	{
 		std::cout << "Int: Impossible" << std::endl;
@@ -27,6 +28,7 @@ void	to_int(std::string arg)
 void	to_float(std::string arg)
 {
 	float f_value = std::atof(arg.c_str());
+	
 	if (f_value == 0 && arg != "0")
 		std::cout << "Float: Impossible" << std::endl;
 	else if (std::isnan(f_value) || std::isinf(f_value))
@@ -40,6 +42,7 @@ void	to_float(std::string arg)
 void	to_double(std::string arg)
 {
 	double d_value = std::strtod(arg.c_str(), NULL);
+	
 	if (d_value == 0 && arg != "0")
 		std::cout << "Float: Impossible" << std::endl;
 	else if (d_value == static_cast<int>(d_value))
@@ -52,6 +55,7 @@ void	to_char(std::string arg)
 {
 	int interger = std::atoi(arg.c_str());
 	char c;
+	
 	c = interger;
 	if (interger == 0 && arg != "0")
 	{
