@@ -270,7 +270,13 @@
     	cout << ch << endl;
     	return 0;
     }
-
+    
+  **output**
+    
+    65
+    A
+    0x1609c20
+    A
 
   ## Purpose for using reinterpret_cast
 
@@ -358,4 +364,8 @@
     
     	return 0;
     }
-    
+   
+   
+# Ressources
+  
+  [What is the uintptr_t data type?](https://stackoverflow.com/questions/1845482/what-is-the-uintptr-t-data-type)
