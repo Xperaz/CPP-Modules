@@ -6,7 +6,7 @@
 #    By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/03 20:16:04 by aouhadou          #+#    #+#              #
-#    Updated: 2022/11/03 20:19:12 by aouhadou         ###   ########.fr        #
+#    Updated: 2022/11/04 14:45:42 by aouhadou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 FLAGS= -std=c++98 -Wall -Wextra -Werror
 
-SRCS = main.cpp Scalar.cpp
+SRCS = main.cpp
 
 NAME=Scalar
 

@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 20:16:08 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/04 14:29:18 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/04 14:49:00 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ void	to_int(std::string arg)
 void	to_float(std::string arg)
 {
 	float f_value = std::atof(arg.c_str());
-	if (std::isnan(f_value) || std::isinf(f_value))
+	if (f_value == 0 && arg != "0")
+		std::cout << "Float: Impossible" << std::endl;
+	else if (std::isnan(f_value) || std::isinf(f_value))
 		std::cout << "Float: " << f_value << 'f' << std::endl;
 	else if (f_value == static_cast<int>(f_value))
 		std::cout << "Float: " << f_value << ".0f" << std::endl;
@@ -38,7 +40,9 @@ void	to_float(std::string arg)
 void	to_double(std::string arg)
 {
 	double d_value = std::strtod(arg.c_str(), NULL);
-	if (d_value == static_cast<int>(d_value))
+	if (d_value == 0 && arg != "0")
+		std::cout << "Float: Impossible" << std::endl;
+	else if (d_value == static_cast<int>(d_value))
 		std::cout << "Float: " << d_value << ".0" << std::endl;
 	else
 		std::cout << "double: " << d_value << std::endl;
