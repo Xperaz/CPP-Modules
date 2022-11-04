@@ -270,7 +270,13 @@
     	cout << ch << endl;
     	return 0;
     }
-
+    
+  **output**
+    
+    65
+    A
+    0x1609c20
+    A
 
   ## Purpose for using reinterpret_cast
 
