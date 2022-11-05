@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 20:16:08 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/04 14:52:09 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/05 20:28:29 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	to_float(std::string arg)
 	else if (f_value == static_cast<int>(f_value))
 		std::cout << "Float: " << f_value << ".0f" << std::endl;
 	else
-		std::cout << "Float: " << f_value << 'f' << std::endl;
+		std::cout << "Float: "  << f_value << 'f' << std::endl;
 }
 
 void	to_double(std::string arg)
@@ -71,7 +71,7 @@ void	to_char(std::string arg)
 int main(int ac, char **av)
 {
 	std::string arg;
-	if(ac == 2)
+	if(ac == 2 && av[1][0])
 	{
 		arg = static_cast<std::string> (av[1]);
 		to_char(arg);
