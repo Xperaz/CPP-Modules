@@ -365,6 +365,13 @@
     	return 0;
     }
    
+# Dynamic_cast
+  
+  dynamic casting is mainly used for safe downcasting at run time. To work on dynamic_cast there must be one virtual function in the base class. A dynamic_cast works only polymorphic base class because it uses this information to decide safe downcasting.
+  
+  ## Synatax
+    
+    dynamic_cast <new_type>(Expression)
    
 # Ressources
   
