@@ -6,17 +6,17 @@
 #    By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/03 20:16:04 by aouhadou          #+#    #+#              #
-#    Updated: 2022/11/05 10:15:52 by aouhadou         ###   ########.fr        #
+#    Updated: 2022/11/05 10:28:40 by aouhadou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-HEADER= Base.hpp A.hpp B.hpp C.hpp
+HEADER= Base.hpp A.hpp B.hpp C.hpp Identify.hpp
 
 CC = c++
 
 FLAGS= -std=c++98 -Wall -Wextra -Werror
 
-SRCS = main.cpp Identify.cpp
+SRCS = main.cpp Base.cpp Identify.cpp A.cpp B.cpp C.cpp
 
 NAME=Serialization
 

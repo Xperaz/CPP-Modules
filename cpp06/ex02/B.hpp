@@ -9,6 +9,7 @@ class B : public Base
 {
 
 	public:
+		void PrintB();
 		~B();
 
 	private:
