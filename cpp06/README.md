@@ -365,6 +365,89 @@
     	return 0;
     }
    
+# Dynamic_cast
+  
+  dynamic casting is mainly used for safe downcasting at run time. To work on dynamic_cast there must be one virtual function in the base class. A dynamic_cast works only polymorphic base class because it uses this information to decide safe downcasting.
+  
+  ## Synatax
+    
+    dynamic_cast <new_type>(Expression)
+    
+  ## Notes
+    
+    0. dynamic_cast is used at run time to find out correct down-cast.<br>
+    1: Need at least one virtual function in base class.
+    2: If the cast is successful, dynamic_cast returns a value of type new_type. 
+    3: If the cast fails and new_type is a pointer type, it returns a null pointer of that type.
+    4: If the cast fails and new_type is a reference type,
+        it throws an exception that matches a handler of type std::bad_cast.
+        
+  ## Code example
+  
+      // C++ Program demonstrates successful
+      // dynamic casting and it returns a
+      // value of type new_type
+      #include <iostream>
+
+      using namespace std;
+      // Base Class declaration
+      class Base {
+	      virtual void print()
+	      {
+	    	  cout << "Base" << endl;
+	     }
+      };
+
+      // Derived1 class declaration
+      class Derived1 : public Base {
+	      void print()
+	     {
+		      cout << "Derived1" << endl;
+	      }
+      };
+
+      // Derived2 class declaration
+      class Derived2 : public Base {
+	      void print()
+	      {
+	      	  cout << "Derived2" << endl;
+	       }
+      };
+
+      // Driver Code
+      int main()
+      {
+	        Derived1 d1;
+
+	        // Base class pointer holding
+	        // Derived1 Class object
+	        Base* bp = dynamic_cast<Base*>(&d1);
+
+	        // Dynamic_casting
+	        Derived1* dp2 = dynamic_cast<Derived1*>(bp);
+	        if (dp2 == nullptr)
+		        cout << "null" << endl;
+	        else
+		        cout << "not null" << endl;
+
+	        return 0;
+        }
+
+  ## BOTTOM LINE:
+  
+  	1. work only on polymorphic base class (at least one virtual function in base class),
+	   because it uses this information to decide about wrong down-cast.
+	   
+	2. it is used for up-cast (D to B) and down-cast (B to D), 
+	    but it is mainly used for correct downcast.
+	    
+	3. using this cast has run time overhead, because it checks object types at run time using RTTI
+	    (Run Time Type Information).
+	    
+	4. if we are sure that we will never cast to wrong object,
+	   then we should always avoid this cast and use static_cast.
+	   
+	   
    
 # Ressources
   
