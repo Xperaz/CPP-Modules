@@ -22,6 +22,8 @@ is called implicitly, so there’s no return value to be checked.
 
 # ostream operator overloading?
 
+   ostream& operator<<(ostream& out, Objects const& obj);
+
   **Output** streams use the insertion **(<<)** operator for standard types. You can also overload the  **<<**  operator for your own classes.
   ## Remarks
     
