@@ -38,6 +38,12 @@ is called implicitly, so there’s no return value to be checked.
     The (out) is of type std::ostream. This can not be copied (the copy constructor is disabled).
     So you need to pass by reference.
     
+ ## Why istream/ostream functions(overloaded << and >>) are declared outside of a class in C++?
+ 
+   In generale A function that doesn’t have to be member, don’t make it a member. If that function doesn’t alter the state of the object and only        uses public members of that object, write it outside the class as a non-member non-friend function.
+
+   Hope this helps. Otherwise, add more details to your question.
+    
  ## what() overloaded function?
  
      syntax: const char * what() const throw();
