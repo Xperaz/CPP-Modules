@@ -127,4 +127,13 @@ int main()
   The "export" keyword is supposed to fix this, but few compilers support it (I only know of Comeau).
 
   You can also explicitly instantiate MyTemplate<int> - then the compiler will create actual member functions for MyTemplate<int> when it compiles     the cpp files containing the MyTemplate member function definition templates.
+  
+  ## Why can’t I separate the definition of my templates class from its declaration and put it inside a .cpp file ?
+  
+  in order to understand why things are the way they are, first accept these facts:
+
+  1) A template is not a class or a function. A template is a “pattern” that the compiler uses to generate a family of classes or functions.<br>
+  2) In order for the compiler to generate the code, it must see both the template definition (not just declaration) and the specific types/whatever       used to “fill in” the template. For example, if you’re trying to use a Foo<int>, the compiler must see both the Foo template and the fact that       you’re trying to make a specific Foo<int>.<br>
+  3) Your compiler probably doesn’t remember the details of one .cpp file while it is compiling another .cpp file. It could, but most do not and if        you   are reading this FAQ, it almost definitely does not. BTW this is called the “separate compilation model.”
+
     
