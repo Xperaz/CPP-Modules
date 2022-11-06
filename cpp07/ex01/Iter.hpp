@@ -11,6 +11,14 @@ void	iter(T *arr, int len, void (*fun)(T *arr, int size))
 	fun(arr, len);
 }
 
+template <typename T>
+
+void func(T *arr, int len)
+{
+    for (int i = 0; i < len; i++)
+        arr[i] -= 32;
+}
+
 // class Iter
 // {
 

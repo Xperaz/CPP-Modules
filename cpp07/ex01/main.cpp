@@ -6,17 +6,11 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 10:47:05 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/06 11:59:51 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/06 12:13:40 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Iter.hpp"
-template <typename T>
-void func(T *arr, int len)
-{
-    for (int i = 0; i < len; i++)
-        arr[i] -= 32;
-}
 
 int main()
 {
