@@ -32,8 +32,8 @@
     	int a = 21;
     	int b = 42;
     
-    	std::cout << "Max of " << a << " and " << b << " is ";
-    	std::cout << max<int>(a, b) << std::endl; // explicit instantiation -> this is preferred
+    	  std::cout << "Max of " << a << " and " << b << " is ";
+    	  std::cout << max<int>(a, b) << std::endl; // explicit instantiation -> this is preferred
         std::cout << "Max of " << a << " and " << b << " is ";
         std::cout << max(a, b) << std::endl; // implicit instantiation -> it might not work for complex classes
     
@@ -45,20 +45,30 @@
         std::cout << "Max of " << c << " and " << d << " is ";
         std::cout << max(c, d) << std::endl; // implicit instantiation
     
-    	char e = 'a';
-    	char f = 'z';
+    	  char e = 'a';
+    	  char f = 'z';
     
-    	std::cout << "Max of " << e << " and " << f << " is ";
-    	std::cout << max<char>(e, f) << std::endl; // explicit instantiation
-    	std::cout << "Max of " << e << " and " << f << " is ";
+    	  std::cout << "Max of " << e << " and " << f << " is ";
+    	  std::cout << max<char>(e, f) << std::endl; // explicit instantiation
+    	  std::cout << "Max of " << e << " and " << f << " is ";
         std::cout << max(e, f) << std::endl; // implicit instantiation
     
         // no problem here
     
-        int ret = max<int>(foo(a), foo(b)); // explicit instantiation -> it will not be macros but actual functions, which are written by the compiler. So foo(a) and foo(b) will only be run once, and the results will be passed as parameters
-    	std::cout << "Max of " << a << " and " << b << " is ";
-    	std::cout << ret << std::endl;
+        int ret = max<int>(foo(a), foo(b)); // explicit instantiation -> it will not be macros but actual functions, which are written by the                 compiler. So foo(a) and foo(b) will only be run once, and the results will be passed as parameters
+    	  std::cout << "Max of " << a << " and " << b << " is ";
+    	  std::cout << ret << std::endl;
     
-    	return 0;
+    	  return 0;
     }
+   
+  ## Why do C++ template definitions need to be in the header?
+    
+  A template class is not a class, it's a template that can be used to create a class. When you instantiate such a class, e.g. MyTemplate<int>, the     compiler creates the class on the spot. In order to create it, it has to see all the templated member functions (so that it can use the templates     to create actual member functions such as MyTemplate<int>::foo() ), and therefore these templated member functions must be in the header.
+
+  If the members are not in the header, the compiler will simply assume that they exist somewhere else and just create actual function declarations.   from the templated function declarations, and this gives you linker errors.
+
+  The "export" keyword is supposed to fix this, but few compilers support it (I only know of Comeau).
+
+  You can also explicitly instantiate MyTemplate<int> - then the compiler will create actual member functions for MyTemplate<int> when it compiles     the cpp files containing the MyTemplate member function definition templates.
     
