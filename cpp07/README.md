@@ -61,6 +61,16 @@
     
     	  return 0;
     }
+    
+  ## Class Templates ?
+  
+  The template concept can be extended to classes. Class templates are generally used for data
+  storage (container) classes.
+  However, classes in generale could store data of only a single basic type.
+  Similarly, we would need to create a new stack class for every data type we wanted to store. It
+  would be nice to be able to write a single class specification that would work for variables of
+  all types, instead of a single basic type. As you may have guessed, class templates allow us to
+  do this.
    
   ## Why do C++ template definitions need to be in the header?
     
