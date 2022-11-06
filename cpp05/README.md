@@ -53,6 +53,10 @@ is called implicitly, so there’s no return value to be checked.
      is usually called in exception handling: you don't want another exception to be thrown while you're trying to handle one.
      
      Example of an exception: throw std::invalid_argument("error");
+     
+  ## What is meant with "const" at end of function declaration? 
+  
+  A "const function", denoted with the keyword const after a function declaration, makes it a compiler error for this class function to change a       member variable of the class. However, reading of a class variables is okay inside of the function, but writing inside of this function will         generate a compiler error.
     
 
 
