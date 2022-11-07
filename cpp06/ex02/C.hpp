@@ -6,15 +6,7 @@
 # include "Base.hpp"
 
 class C : public Base
-{
-
-	public:
-		void PrintC();
-		~C();
-
-	private:
-
-};
+{};
 
 
 #endif /* *************************************************************** C_H */

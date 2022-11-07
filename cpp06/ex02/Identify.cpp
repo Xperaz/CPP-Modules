@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Identify.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/07 20:38:00 by aouhadou          #+#    #+#             */
+/*   Updated: 2022/11/07 20:38:01 by aouhadou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Identify.hpp"
 
 Base    *generate(void)
@@ -34,24 +46,25 @@ void    identify(Base *p)
 
 void identify(Base &p)
 {
+    Base tmp;
     try
     {
-        A &a = dynamic_cast<A &>(p);
-        a.PrintA();
+        tmp = dynamic_cast<A &>(p);
+        std::cout << "A" << std::endl;
     }
     catch(const std::exception& e)
     {
         try
         {
-            B &b = dynamic_cast<B &>(p);
-            b.PrintB();
+            tmp = dynamic_cast<B &>(p);
+            std::cout << "B" << std::endl;
         }
         catch(const std::exception& e)
         {
             try
             {
-                C &c = dynamic_cast<C &>(p);
-                c.PrintC();
+                tmp = dynamic_cast<C &>(p);
+                std::cout << "C" << std::endl;
             }
             catch(const std::exception& e)
             {

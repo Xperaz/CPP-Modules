@@ -6,17 +6,26 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 20:16:08 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/05 20:28:29 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:08:35 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Scalar.hpp"
 #include <cmath>
+#include <stdlib.h>
 
 void	to_int(std::string arg)
 {
 	int interger = std::atoi(arg.c_str());
+	std::stringstream ss;
+	std::string tmp;
 	
+	ss << interger;
+	if (ss.str() != arg)
+	{
+		std::cout << "Int: Impossible" << std::endl;
+		return ;
+	}
 	if (interger == 0 && arg != "0")
 	{
 		std::cout << "Int: Impossible" << std::endl;
@@ -56,10 +65,10 @@ void	to_char(std::string arg)
 	int interger = std::atoi(arg.c_str());
 	char c;
 	
-	c = interger;
-	if (interger == 0 && arg != "0")
+	c = static_cast<char>(interger);
+	if ((interger == 0 && arg != "0") || interger > 255 || interger < 0)
 	{
-		std::cout << "Int: Impossible" << std::endl;
+		std::cout << "Char: Impossible" << std::endl;
 		return ;
 	}
 	if (std::isprint(c))
