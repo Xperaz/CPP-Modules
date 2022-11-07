@@ -454,7 +454,18 @@ It's not often you need something like this — and it's best avoided if you don
 	4. if we are sure that we will never cast to wrong object,
 	   then we should always avoid this cast and use static_cast.
 	   
-	   
+  ## Const Cast
+  
+   All of the C++ casts we've seen so far, including reinterpret_cast, are respectful of const, in the sense that none of those casts can be used to change a const type to a corresponding non-const type (e.g., to cast from const std::string& to std::string&). (On the other hand, C-style casts will let you do this, whether you meant to do it or not; this is one of many reasons they're best avoided.)
+
+In general, this is a good thing; we don't want const protections to be thrown away indiscriminately. But sometimes we have to remove it temporarily; for example, if we need to interoperate with someone else's C++ code and they didn't make proper use of const (e.g., they have a class with member functions that should be marked const but aren't), we may not have the ability to change their code, so we'll have to work around the problem if we want to make use of it. A const cast can be used to remove the const from a type, while introducing no other changes to it. (If you also wanted to change the type in some other way, you'd have to do two casts: a const_cast to remove the const and another one such as a static_cast or dynamic_cast to change the type.) A simple example:
+
+void blah(const Blah& b)
+{
+    Blah& bb = const_cast<Blah&>(b);
+    bb.someMemberFunctionThatIsNotConst();
+}
+As a rule, const_cast is something that should make you feel uncomfortable to use, because it represents a way to subvert invariants about how a program is supposed to behave. Once in a while, you have no choice, but it's very much a tool of last resort.
    
 # Ressources
   
