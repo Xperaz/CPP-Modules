@@ -369,6 +369,8 @@
   
   dynamic casting is mainly used for safe downcasting at run time. To work on dynamic_cast there must be one virtual function in the base class. A dynamic_cast works only polymorphic base class because it uses this information to decide safe downcasting.
   
+  The primary purpose for the dynamic_cast operator is to perform type-safe downcasts. A downcast is the conversion of a pointer or reference to a class   A to a pointer or reference to a class B, where class A is a base class of B. The problem with downcasts is that a pointer of type A* might point to     an object that is not a base class subobject of type A that belongs to an object of type B or a class derived from B. The dynamic_cast operator         ensures that if you convert a pointer to class A to a pointer to class B, the object of type A pointed to by the former belongs to an object of type B   or a class derived from B as a base class subobject.
+  
   ## Synatax
     
     dynamic_cast <new_type>(Expression)
