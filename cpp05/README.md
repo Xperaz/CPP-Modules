@@ -38,6 +38,12 @@ is called implicitly, so there’s no return value to be checked.
     The (out) is of type std::ostream. This can not be copied (the copy constructor is disabled).
     So you need to pass by reference.
     
+ ## Why istream/ostream functions(overloaded << and >>) are declared outside of a class in C++?
+ 
+   In generale A function that doesn’t have to be member, don’t make it a member. If that function doesn’t alter the state of the object and only        uses public members of that object, write it outside the class as a non-member non-friend function.
+
+   Hope this helps. Otherwise, add more details to your question.
+    
  ## what() overloaded function?
  
      syntax: const char * what() const throw();
@@ -46,7 +52,11 @@ is called implicitly, so there’s no return value to be checked.
      This is an important guarantee for a function like what,
      is usually called in exception handling: you don't want another exception to be thrown while you're trying to handle one.
      
-     Eample of an exception: throw std::invalid_argument("error");
+     Example of an exception: throw std::invalid_argument("error");
+     
+  ## What is meant with "const" at end of function declaration? 
+  
+  A "const function", denoted with the keyword const after a function declaration, makes it a compiler error for this class function to change a       member variable of the class. However, reading of a class variables is okay inside of the function, but writing inside of this function will         generate a compiler error.
     
 
 
