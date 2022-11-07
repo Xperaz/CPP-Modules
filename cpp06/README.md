@@ -469,4 +469,10 @@ As a rule, const_cast is something that should make you feel uncomfortable to us
    
 # Ressources
   
+  [Notes and Examples: Type Conversions](https://www.ics.uci.edu/~thornton/ics45c/Notes/TypeConversions/)
+  
+  [The dynamic_cast operator](https://www.ibm.com/docs/en/zos/2.1.0?topic=expressions-dynamic-cast-operator-c-only)
+  
+  [UPCASTING AND DOWNCASTING](https://www.bogotobogo.com/cplusplus/upcasting_downcasting.php)
+  
   [What is the uintptr_t data type?](https://stackoverflow.com/questions/1845482/what-is-the-uintptr-t-data-type)
