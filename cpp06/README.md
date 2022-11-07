@@ -239,6 +239,11 @@
 
   It is used to convert a pointer of some data type into a pointer of another data type, even if the data types<br> before and after conversion are different.<br>
   It does not check if the pointer type and data pointed by the pointer is same or not.<br>
+  
+  
+  More details: A reinterpret cast is a very scary instrument, indeed. You can use reinterpret_cast to convert just about anything into just about     anything else,    similar to the C-style casts we saw previously. For example, a reinterpret_cast will allow you to convert between pointers of    unrelated types, between integers and pointers, and so on.
+
+It's not often you need something like this — and it's best avoided if you don't have the absolute need, since it's so dangerous in practice — but it does come in handy once in a while to be able to make conversions in a completely unrestricted way. One such use is to cast pointers to void* and back, where void* is an untyped pointer: an address without a type. A void* doesn't let you do anything with the object it points to (since it's unknown what the object's type is), but a reinterpret_cast would let you cast the pointer to a different type, provided that you knew what the right type was. This is the kind of thing that's done in extremely low-level code, such as memory allocators, but if you find yourself doing this often in higher-level programs, your design is probably lacking.
 
   ## Syntax :
 
