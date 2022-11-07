@@ -4,18 +4,18 @@
 # include <iostream>
 # include <string>
 
-template <typename T>
+template <typename T, typename Bsize>
 
-void	iter(T *arr, int len, void (*fun)(T *arr, int size))
+void	iter(T *arr, Bsize len, void (*fun)(T *arr, Bsize size))
 {
 	fun(arr, len);
 }
 
-template <typename T>
+template <typename T, typename Bsize>
 
-void func(T *arr, int len)
+void func(T *arr, Bsize len)
 {
-    for (int i = 0; i < len; i++)
+    for (Bsize i = 0; i < len; i++)
         arr[i] -= 32;
 }
 
