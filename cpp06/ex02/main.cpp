@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:37:53 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/07 20:40:45 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/07 23:16:58 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,17 @@ int main()
         identify(res);
     }
     {
+        A x;
+        Base &p = x;
+        identify(p);
+    }
+    {
         B x;
+        Base &p = x;
+        identify(p);
+    }
+    {
+        C x;
         Base &p = x;
         identify(p);
     }
