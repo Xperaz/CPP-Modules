@@ -18,7 +18,7 @@
    :point_right: Returns an iterator to the element following the last element of the container.<br>
    :point_right: This element acts as a placeholder; attempting to access it results in undefined behavior.<br>
 
-     ```it = v.end()```
+     it = v.end()
      
    iii. rbegin()<br>
 
