@@ -42,4 +42,31 @@
             cout << "v.rend()=> " << *v.rend() << endl;
             return 0;
         }
+       
+  ## Iterator invalidation
+    
+  :point_right: Due to update (Insert / Delete) of container that is using iterators.<br>
+  :point_right: No runtime error but iterator no longer guaranteed to have access to the same element after update.<br>
+  :point_right: Well-documented rules.<br>
+  :point_right: Depends on container implementation.<br>
+  
+  ## Code example.
+  
+    #include <iostream>
+    #include <vector>
+    using namespace std;
+    int main()
+    {
+        vector<int> v = {1, 2, 3, 4, 5, 6, 7};
+        auto it = v.begin() + 4; // 5
+        cout << "*it :=> " << *it << endl;
+        cout << "lit - begin :=> " << it - v.begin() << std::endl;
+
+        //v.insert(it, 100); //Iterator Invalidation we need to update it
+        it = v.insert(it, 100); // {1, 2, 3, 4, 100, 5, 6, 7}
+        cout <<  "*it :=> " << *it << endl;
+        cout << "it - begin :=> " << it - v.begin() << endl;
+        return 0;
+      }
+  
    
