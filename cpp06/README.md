@@ -239,6 +239,11 @@
 
   It is used to convert a pointer of some data type into a pointer of another data type, even if the data types<br> before and after conversion are different.<br>
   It does not check if the pointer type and data pointed by the pointer is same or not.<br>
+  
+  
+  More details: A reinterpret cast is a very scary instrument, indeed. You can use reinterpret_cast to convert just about anything into just about     anything else,    similar to the C-style casts we saw previously. For example, a reinterpret_cast will allow you to convert between pointers of    unrelated types, between integers and pointers, and so on.
+
+It's not often you need something like this — and it's best avoided if you don't have the absolute need, since it's so dangerous in practice — but it does come in handy once in a while to be able to make conversions in a completely unrestricted way. One such use is to cast pointers to void* and back, where void* is an untyped pointer: an address without a type. A void* doesn't let you do anything with the object it points to (since it's unknown what the object's type is), but a reinterpret_cast would let you cast the pointer to a different type, provided that you knew what the right type was. This is the kind of thing that's done in extremely low-level code, such as memory allocators, but if you find yourself doing this often in higher-level programs, your design is probably lacking.
 
   ## Syntax :
 
@@ -369,6 +374,8 @@
   
   dynamic casting is mainly used for safe downcasting at run time. To work on dynamic_cast there must be one virtual function in the base class. A dynamic_cast works only polymorphic base class because it uses this information to decide safe downcasting.
   
+  The primary purpose for the dynamic_cast operator is to perform type-safe downcasts. A downcast is the conversion of a pointer or reference to a class   A to a pointer or reference to a class B, where class A is a base class of B. The problem with downcasts is that a pointer of type A* might point to     an object that is not a base class subobject of type A that belongs to an object of type B or a class derived from B. The dynamic_cast operator         ensures that if you convert a pointer to class A to a pointer to class B, the object of type A pointed to by the former belongs to an object of type B   or a class derived from B as a base class subobject.
+  
   ## Synatax
     
     dynamic_cast <new_type>(Expression)
@@ -447,8 +454,25 @@
 	4. if we are sure that we will never cast to wrong object,
 	   then we should always avoid this cast and use static_cast.
 	   
-	   
+  ## Const Cast
+  
+   All of the C++ casts we've seen so far, including reinterpret_cast, are respectful of const, in the sense that none of those casts can be used to change a const type to a corresponding non-const type (e.g., to cast from const std::string& to std::string&). (On the other hand, C-style casts will let you do this, whether you meant to do it or not; this is one of many reasons they're best avoided.)
+
+In general, this is a good thing; we don't want const protections to be thrown away indiscriminately. But sometimes we have to remove it temporarily; for example, if we need to interoperate with someone else's C++ code and they didn't make proper use of const (e.g., they have a class with member functions that should be marked const but aren't), we may not have the ability to change their code, so we'll have to work around the problem if we want to make use of it. A const cast can be used to remove the const from a type, while introducing no other changes to it. (If you also wanted to change the type in some other way, you'd have to do two casts: a const_cast to remove the const and another one such as a static_cast or dynamic_cast to change the type.) A simple example:
+
+void blah(const Blah& b)
+{
+    Blah& bb = const_cast<Blah&>(b);
+    bb.someMemberFunctionThatIsNotConst();
+}
+As a rule, const_cast is something that should make you feel uncomfortable to use, because it represents a way to subvert invariants about how a program is supposed to behave. Once in a while, you have no choice, but it's very much a tool of last resort.
    
 # Ressources
+  
+  [Notes and Examples: Type Conversions](https://www.ics.uci.edu/~thornton/ics45c/Notes/TypeConversions/)
+  
+  [The dynamic_cast operator](https://www.ibm.com/docs/en/zos/2.1.0?topic=expressions-dynamic-cast-operator-c-only)
+  
+  [UPCASTING AND DOWNCASTING](https://www.bogotobogo.com/cplusplus/upcasting_downcasting.php)
   
   [What is the uintptr_t data type?](https://stackoverflow.com/questions/1845482/what-is-the-uintptr-t-data-type)
