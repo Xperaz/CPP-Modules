@@ -2,43 +2,71 @@
   The C++ STL (Standard Template Library) is a powerful set of C++ template classes to provide general-purpose classes and functions with templates that      implement many popular and commonly used algorithms and data structures like vectors, lists, queues, and stacks.
 
   ## Iterators
-
-   :point_right: Objects that enable traversal of containers in some order, for either reading or writing.<br>
-
-   :point_right: Iterators are defined as templates and muct comply with a very specific set of rules in order to qualify as one of many types of iterators.
+  :point_right: Objects that enable traversal of containers in some order, for either reading or writing.<br>
+  :point_right: Iterators are defined as templates and muct comply with a very specific set of rules in order to qualify as one of many types of iterators.
 
   ## Iterator Functions
-
-    i. begin()
-     :point_right: Return iterator to the beginning of the container.<br>
-        
-        it = v.begin() 
-    (v is a container)
+  i. begin() <br>
+  
+  :point_right: Return iterator to the beginning of the container.<br>
+          ```it = v.begin() ```
+          
+   (v is a container)
     
-    ii. end()
-      :point_right: Returns an iterator to the element following the last element of the container.<br>
-      :point_right: This element acts as a placeholder; attempting to access it results in undefined behavior.<br>
+   ii. end()<br>
+   
+   :point_right: Returns an iterator to the element following the last element of the container.<br>
+   :point_right: This element acts as a placeholder; attempting to access it results in undefined behavior.<br>
 
-        it = v.end()
-    iii. rbegin()
+     it = v.end()
+     
+   iii. rbegin()<br>
 
-      :point_right: Returns iterator to the last element of the container.<br>
+   :point_right: Returns iterator to the last element of the container.<br>
 
-    iiii. rend()
+   iiii. rend()<br>
 
-      :point_right: Returns a reverse iterator pointing to the theoretical element right before the first element int the array container.
+   :point_right: Returns a reverse iterator pointing to the theoretical element right before the first element int the array container.
 
-    ## Code example 
+   ## Code example 
 
         #include <iostream>
         #include <vector>
         using namespace std;
-        int main{
-            vector<int> V = {1, 2, 3, 4, 5, 6, 7};
-            cout << "v.beginO => " << *v.begin()<< endl;
-            cout <<"v.endC) => " << *v.end() << endl;
+        int main()
+        {
+            vector<int> v = {1, 2, 3, 4, 5, 6, 7};
+            cout << "v.begin() => " << *v.begin()<< endl;
+            cout <<"v.end()) => " << *v.end() << endl;
             cout << "v.rbegin() => " << *v.rbegin() << std::endl;
-            cout << "v.rendO => " << *v.rend() << endl;
+            cout << "v.rend()=> " << *v.rend() << endl;
             return 0;
         }
+       
+  ## Iterator invalidation
+    
+  :point_right: Due to update (Insert / Delete) of container that is using iterators.<br>
+  :point_right: No runtime error but iterator no longer guaranteed to have access to the same element after update.<br>
+  :point_right: Well-documented rules.<br>
+  :point_right: Depends on container implementation.<br>
+  
+  ## Code example.
+  
+    #include <iostream>
+    #include <vector>
+    using namespace std;
+    int main()
+    {
+        vector<int> v = {1, 2, 3, 4, 5, 6, 7};
+        auto it = v.begin() + 4; // 5
+        cout << "*it :=> " << *it << endl;
+        cout << "lit - begin :=> " << it - v.begin() << std::endl;
+
+        //v.insert(it, 100); //Iterator Invalidation we need to update it
+        it = v.insert(it, 100); // {1, 2, 3, 4, 100, 5, 6, 7}
+        cout <<  "*it :=> " << *it << endl;
+        cout << "it - begin :=> " << it - v.begin() << endl;
+        return 0;
+      }
+  
    
