@@ -134,6 +134,6 @@ int main()
 
   1) A template is not a class or a function. A template is a “pattern” that the compiler uses to generate a family of classes or functions.<br>
   2) In order for the compiler to generate the code, it must see both the template definition (not just declaration) and the specific types/whatever       used to “fill in” the template. For example, if you’re trying to use a Foo<int>, the compiler must see both the Foo template and the fact that       you’re trying to make a specific Foo<int>.<br>
-  3) Your compiler probably doesn’t remember the details of one .cpp file while it is compiling another .cpp file. It could, but most do not and if        you   are reading this FAQ, it almost definitely does not. BTW this is called the “separate compilation model.”
+  3) Your compiler probably doesn’t remember the details of one .cpp file while it is compiling another .cpp file. It could, but most do not.
 
     
