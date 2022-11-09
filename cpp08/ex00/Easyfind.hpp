@@ -1,22 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Easyfind.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/09 12:32:24 by aouhadou          #+#    #+#             */
+/*   Updated: 2022/11/09 13:33:07 by aouhadou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef EASYFIND_HPP
 # define EASYFIND_HPP
 
 # include <iostream>
 # include <string>
-#include <algorithm>    // std::find
+#include <algorithm>
 #include <vector>
 #include <iterator>
+#include <list>
 
 template <typename T>
 
 void	easyfind(T p, int n)
 {
-	// typename T::iterator location;
-	// location = std::find(p.begin(), p.end(), n);
-	// if (location != p.end())
-	// 	std::cout << "value found in: " << static_cast<int>(location - p.begin()) << std::endl;
 	typename T::iterator it;
-	int i = 1;
 	for (it = p.begin(); it != p.end(); ++it)
 	{
 		if ( *it == n)
@@ -24,7 +32,6 @@ void	easyfind(T p, int n)
 			std::cout << "value found in : "  << std::distance(p.begin(), it) << std::endl;
 			return;
 		}
-		i++;
 	}
 	
 	std::cout << "value not found\n";
