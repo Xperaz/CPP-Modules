@@ -4,36 +4,21 @@
 # include <iostream>
 # include <string>
 
-template <typename T, typename Bsize>
+template <typename T>
 
-void	iter(T *arr, Bsize len, void (*fun)(T *arr, Bsize size))
+void	iter(T *arr, unsigned int len, void (*fun)(T &c))
 {
-	fun(arr, len);
+	for (unsigned int i = 0; i < len; i++)
+        fun(arr[i]);
 }
 
-template <typename T, typename Bsize>
 
-void func(T *arr, Bsize len)
+template <typename T>
+
+void func(T &c)
 {
-    for (Bsize i = 0; i < len; i++)
-        arr[i] -= 32;
+    c -= 32;
 }
 
-// class Iter
-// {
-
-// 	public:
-
-// 		Iter();
-// 		Iter( Iter const & src );
-// 		~Iter();
-
-// 		Iter &		operator=( Iter const & rhs );
-
-// 	private:
-
-// };
-
-// std::ostream &			operator<<( std::ostream & o, Iter const & i );
 
 #endif /* ************************************************************ ITER_H */

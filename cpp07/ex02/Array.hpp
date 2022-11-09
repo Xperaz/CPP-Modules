@@ -26,16 +26,15 @@ class Array
 		Array( const Array & src ){
 			len = src.len;
 			arr = new(std::nothrow) T[len];
-
 			for (unsigned int i = 0; i < len; i++)
 				arr[i] = src.arr[i];
+			*this = src;
 		}
 		
 		~Array<T>(void){std::cout << "destructor called!\n";}
 
 		Array &		operator=( const Array & rhs ){
-			
-			if (this == rhs)
+			if (this == &rhs)
 				return (*this);
 			delete []arr;
 			if (rhs.arr == NULL || rhs.len == 0)
@@ -48,8 +47,8 @@ class Array
 			return (*this);
 		}
 
-		T & operator[](size_t Index){
-			if (Index > len)
+		T & operator[](int Index){
+			if (Index >= static_cast<int> (len) || Index < 0)
 				throw std::exception();
 			return arr[Index];
 		}
@@ -62,8 +61,5 @@ class Array
 		T *arr;
 
 };
-
-template <typename T>
-std::ostream &			operator<<( std::ostream & o, Array<T> const & i );
 
 #endif /* *********************************************************** ARRAY_H */

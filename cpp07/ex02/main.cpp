@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 10:47:05 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/07 13:48:18 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/09 10:18:18 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,15 @@ int main(int, char**)
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
+        
     }
 
     for (int i = 0; i < MAX_VAL; i++)
     {
         numbers[i] = rand();
+        
     }
-    delete [] mirror;//
+    delete [] mirror;
     return 0;
 }
 
