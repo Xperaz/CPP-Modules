@@ -2,12 +2,11 @@
 # define MUTANTSTACK_HPP
 
 # include <iostream>
-# include <string>
-# include <deque>
+#include <stack>
 
 template <typename T>
 
-class MutantStack
+class MutantStack : public std::stack<T>
 {
 	public:
 
@@ -17,74 +16,59 @@ class MutantStack
 		}
 
 		~MutantStack(){};
-
-		void			push(T val){
-			stack.push_back(val);
-		}
-
-		void			pop(){
-			stack.pop_back();
-		}
-
-		unsigned int	size(){
-			return (stack.size());
-		}
-
-		T				top(){
-			return (stack.back());
-		}
-
-		bool			empty(){
-			return (stack.empty());
-		}
 	
 		MutantStack &		operator=( MutantStack const & rhs ){
 			if (this != &rhs)
 			{
-				stack = rhs.stack;
+				this->c = rhs.c;
 			}
 			return (*this);
 		}
+		typedef typename std::stack<T>::container_type::iterator iterator;
+		iterator	begin ( void ) 
+		{ 
+			return  ( this->c.begin ( ) ) ; 
+		}
 
-		// template <typename It>
-		// class iterator
-		// {
-		// private:
-		// 	/* data */
-		// public:
-		// 	iterator(/* args */){};
-		// 	~iterator(){};
-		// 	It	begin ( void ) 
-		// 	{ 
-		// 		return  ( ::stack.begin ( ) ) ; 
-		// 	}
-		// };
+		iterator	end ( void ) 
+		{ 
+			return  ( this->c.end ( ) ) ; 
+		}
+
+		typedef typename std::stack<T>::container_type::iterator const_iterator;
+		const_iterator	begin ( void ) const
+		{ 
+			return  ( this->c.begin ( ) ) ; 
+		}
+
+		const_iterator	end ( void ) const
+		{ 
+			return  ( this->c.end ( ) ) ; 
+		}
+
+		typedef typename std::stack<T>::container_type::iterator reverse_iterator;
+		reverse_iterator	rbegin ( void ) 
+		{ 
+			return  ( this->c.rbegin ( ) ) ; 
+		}
+
+		reverse_iterator	rend ( void ) 
+		{ 
+			return  ( this->c.rend ( ) ) ; 
+		}
 		
-	private:
-		std::deque<T> stack;
+		typedef typename std::stack<T>::container_type::iterator const_reverse_iterator;
+
+		const_reverse_iterator crbegin() const {
+			return (this->c.crbegin());
+		}
+
+		const_reverse_iterator crend() const {
+			return (this->c.crend());
+		}
+
 
 
 };
-
-
-// template <typename It>
-
-// class iterators : public MutantStack
-// {
-
-// 	public:
-// 		iterators(/* args */){};
-// 		~iterators(){};
-
-// 		iterator	begin ( void ) 
-// 		{ 
-// 			return  ( this -> It.begin ( ) ) ; 
-// 		}
-	
-// 	private:
-// 		iterators<It> iterator;
-
-// };
-
 
 #endif
