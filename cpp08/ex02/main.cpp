@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:00:44 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/11 09:23:15 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/11 12:07:10 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int main()
         ++it2;
     }
    std::stack<int> s(mstack);
-//    MutantStack<int, std::vector<int> > mstack4;
-//    std::stack<int, std::vector<int> > t(mstack4); 
+   MutantStack<int, std::vector<int> > mstack4;
+   std::stack<int, std::vector<int> > t(mstack4);
     return 0;
 }
