@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:00:44 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/09 12:27:24 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/11 10:53:45 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main()
     v.push_back(50);
     v.push_back(60);
        
-    easyfind(v, 10);
+    easyfind(v, 110);
 
     std::cout << "------------- List ------------" << std::endl;
     

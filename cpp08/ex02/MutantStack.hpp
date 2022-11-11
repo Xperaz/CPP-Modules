@@ -6,7 +6,7 @@
 /*   By: aouhadou <aouhadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 18:49:53 by aouhadou          #+#    #+#             */
-/*   Updated: 2022/11/10 21:56:08 by aouhadou         ###   ########.fr       */
+/*   Updated: 2022/11/11 10:49:30 by aouhadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,5 @@ class MutantStack : public std::stack<T, Container>
 		}
 
 };
-
 
 #endif
