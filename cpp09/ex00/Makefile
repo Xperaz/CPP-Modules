@@ -2,7 +2,7 @@ HEADER=BitcoinExchange.hpp
 CC=c++
 FLAGS= -std=c++98 -Wall -Wextra -Werror
 
-SRCS=main.cpp BitcoinExchange.cpp
+SRCS=main.cpp BitcoinExchange.cpp helper.cpp
 OBJS=$(SRCS:.cpp=.o)
 NAME=btc
 

@@ -7,6 +7,8 @@
 #include <fstream>
 #include <map>
 #include <string.h>
+#include<array>
+#include <sstream>
 
 class BitcoinExchange
 {
@@ -18,5 +20,10 @@ class BitcoinExchange
         BitcoinExchange & operator=(const BitcoinExchange &other);
         ~BitcoinExchange();
 };
+
+bool IsNumber(char *str);
+int CheckHiphen(char *str);
+std::map<std::string, long double> GetMapData();
+bool IsValidNumber(char *str);
 
 #endif
