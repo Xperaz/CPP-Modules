@@ -1,5 +1,29 @@
 #include "BitcoinExchange.hpp"
 
+bool  IsValidRate(char *str)
+{
+    int i = 0;
+    int count = 0;
+    while (str[i])
+    {
+        if (str[i] == '.')
+            count++;
+        i++;
+    }
+    if (count > 1)
+        return (false);
+    i =0;
+    while (str[i])
+    {
+        if (str[i] == '.')
+            i++;
+        if (str[i] < '0' || str[i] >= '9')
+            return (false);
+        i++;
+    }
+    
+    return (true);
+}
 
 bool IsValidDay(char *token)
 {
@@ -41,7 +65,7 @@ bool IsValidYear(char *token)
     if (len != 4)
         return (false);
     int val = atoi(token);
-    if (val > 2022 || val < 2000)
+    if (val > 2022 || val < 2009)
         return (false);
     return (true);   
 }
@@ -70,6 +94,7 @@ int main(int ac, char **av)
         std::string token;
         std::string date;
         double value;
+        std::string str_value;
         int count = 0;
         while (getline(ss, token, '|'))
         {
@@ -118,11 +143,7 @@ int main(int ac, char **av)
                 // remove spaces
                 token.erase(std::remove(token.begin(), token.end(), ' '), token.end());
                 // check if valid number
-                if (!IsNumber((char *)token.c_str()))
-                {
-                    flag = 0;
-                    break;
-                }
+                str_value = token;
                 value = atof(token.c_str());
                 if (value < 0)
                 {
@@ -134,6 +155,11 @@ int main(int ac, char **av)
                 {
                     flag = -1;
                     std::cout << "Error: too large a number." << std::endl;
+                    break;
+                }
+                if (!IsValidRate((char *)str_value.c_str()))
+                {
+                    flag = 0;
                     break;
                 }
 
