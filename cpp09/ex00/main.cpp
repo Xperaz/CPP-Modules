@@ -70,11 +70,13 @@ bool IsValidYear(char *token)
     return (true);   
 }
 
+// check file is empy and check each token is date and value
+
 int main(int ac, char **av)
 {
     std::map<std::string, long double> data;
     data = GetMapData();
-    if (ac < 2 || av[1][0] == '\0')
+    if (ac != 2 || av[1][0] == '\0')
     {
         std::cout << "Error: could not open file." << std::endl;
         return (1);

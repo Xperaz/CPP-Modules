@@ -30,7 +30,7 @@ bool IsValidInput(char *str)
 
 bool CheckInput(int ac, char **av)
 {
-    if (ac < 2 || av[1][0] == '\0')
+    if (ac != 2 || av[1][0] == '\0')
         return (false);
     else if (!IsValidInput(av[1]))
         return (false);
@@ -52,7 +52,15 @@ int main(int ac, char **av)
     std::stack<int> myStack;
     while (getline(ss, token, ' ')) {
         if (!IsStrOperator(token))
-            myStack.push(atoi((char *)token.c_str()));
+        {
+            int operand = atoi((char *)token.c_str());
+            if (operand > 9)
+            {
+                std::cout << "There is a value which greater than 9" << std::endl;
+                return 0;
+            }
+            myStack.push(operand);
+        }
         else if (IsStrOperator(token) && myStack.size() > 1)
         {
             if (token == "*")
