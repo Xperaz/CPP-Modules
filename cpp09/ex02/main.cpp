@@ -121,8 +121,8 @@ int main(int ac, char **av)
         std::cout << "Invalid input" << std::endl;
         return (delete[] tab, 0);
     }
-    // std::cout << "/*----------------- Vector -------------------" << std::endl;
-    // sort_vector(tab, len);
+    std::cout << "/*----------------- Vector -------------------" << std::endl;
+    sort_vector(tab, len);
     std::cout << "/*----------------- Deque -------------------" << std::endl;
     sort_deque(tab, len);
     delete[] tab;

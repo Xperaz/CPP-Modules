@@ -32,37 +32,3 @@ int CheckHiphen(char *str)
     }
     return ((count != 2) ? 0 : 1);
 }
-
-std::map<std::string, long double> GetMapData()
-{
-    std::map<std::string, long double> data;
-    std::string mydata;
-    
-    std::ifstream Myreadfile("data.csv");
-    int start = 0;
-    while (getline(Myreadfile, mydata))
-    {
-        if (start == 0)
-        {
-            start++;
-            continue;
-        }
-        const char *str = mydata.c_str();
-        char *token = strtok((char *)str, ",");
-        int tag = 0;
-        char *date;
-        char *value;
-        while (token != NULL)
-        {
-            if (tag == 0)
-                date = token;
-            else if (tag == 1)
-                value = token;
-            tag++;
-            token = strtok(NULL, ",");
-        }
-        std::string key(date);
-        data[key] = atof(value);
-    }
-    return (data);
-}

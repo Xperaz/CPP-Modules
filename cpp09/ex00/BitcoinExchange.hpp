@@ -12,18 +12,22 @@
 
 class BitcoinExchange
 {
-    private:
-        /* data */
-    public:
-        BitcoinExchange(/* args */);
-        BitcoinExchange(BitcoinExchange const &copy);
-        BitcoinExchange & operator=(const BitcoinExchange &other);
-        ~BitcoinExchange();
+	private:
+		/* data */
+	public:
+		BitcoinExchange(/* args */);
+		BitcoinExchange(BitcoinExchange const &copy);
+		BitcoinExchange & operator=(const BitcoinExchange &other);
+		~BitcoinExchange();
 };
 
-bool IsNumber(char *str);
-int CheckHiphen(char *str);
-std::map<std::string, long double> GetMapData();
-bool IsValidNumber(char *str);
+bool                                IsNumber(char *str);
+int                                 CheckHiphen(char *str);
+std::map<std::string, long double>  GetMapData();
+bool                                IsValidNumber(char *str);
+bool                                IsValidRate(char *str);
+bool                                IsValidDay(char *token);
+bool								IsValidMonth(char *token);
+bool								IsValidYear(char *token);
 
 #endif
