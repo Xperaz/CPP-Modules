@@ -1,11 +1,11 @@
 #include "PmergeMe.hpp"
 
-void print_deque(std::deque<int> &dq)
+void print_deque(std::deque<int> myDeque)
 {
     std::deque<int>::iterator it;
-    for (it = dq.begin(); it != dq.end(); ++it)
+    for (it = myDeque.begin(); it != myDeque.end(); ++it)
     {
-       std::cout << *it << " ";
+        std::cout << *it << " ";
     }
     std::cout << std::endl;
 }
@@ -99,7 +99,7 @@ void sort_deque(int *tab, int len)
     print_deque(pmerge);
     clock_t start_time = clock();
     merge_insert_sort_deque(pmerge);
-    clock_t end_time = clock(); // Step 5
+    clock_t end_time = clock();
     double execution_time = double(end_time - start_time); 
     std::cout << "deque after:    ";
     print_deque(pmerge);
@@ -119,11 +119,12 @@ int main(int ac, char **av)
     if (tab == NULL)
     {
         std::cout << "Invalid input" << std::endl;
-        return (0);
+        return (delete[] tab, 0);
     }
-    std::cout << "/*----------------- Vector -------------------" << std::endl;
-    sort_vector(tab, len);
+    // std::cout << "/*----------------- Vector -------------------" << std::endl;
+    // sort_vector(tab, len);
     std::cout << "/*----------------- Deque -------------------" << std::endl;
     sort_deque(tab, len);
+    delete[] tab;
     return(0);
 }

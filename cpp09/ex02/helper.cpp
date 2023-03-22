@@ -66,20 +66,25 @@ int *Parse(std::string full)
     if (!IsValidInput(full))
         return (NULL);
     int count = GetLength(full);
-    int *tab = new int(count);
+    int *tab = new int[count];
     std::stringstream ss(full);
     std::string token;
     int i = 0;
     while (getline(ss, token, ' '))
     {
         if (token[0] == '\0')
+        {
+            delete[] tab;
             return (NULL);
+        }
         int val = atoi((char *)token.c_str());
         if (val < 0)
+        {
+            delete[] tab;
             return (NULL);
+        }
         tab[i] = val;
         i++;
     }
-
     return (tab);
 }

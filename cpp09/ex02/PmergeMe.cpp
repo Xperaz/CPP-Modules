@@ -107,7 +107,7 @@ void sort_vector(int *tab, int len)
     print_vector(vi);
     clock_t start_time = clock();
     merge_insert_sort_vector(vi);
-    clock_t end_time = clock(); // Step 5
+    clock_t end_time = clock();
     double execution_time = double(end_time - start_time); 
     std::cout << "vector after:    ";
     print_vector(vi);
