@@ -1,12 +1,5 @@
 #include "RPN.hpp"
 
-bool IsStrOperator(std::string str)
-{
-    if (str == "/" || str == "*" || str == "+" || str == "-")
-        return (true);
-    return (false);
-}
-
 bool IsOperator(char c)
 {
     if (c == '/' || c == '*' || c == '+' || c == '-')
@@ -14,25 +7,9 @@ bool IsOperator(char c)
     return (false);
 }
 
-bool IsValidInput(char *str)
-{
-    int i = 0;
-    while (str[i])
-    {
-        if (IsOperator(str[i]) || str[i] == ' ')
-            i++;
-        else if (!isdigit(str[i]))
-            return (false);
-        i++;
-    }
-    return (true);
-}
-
 bool CheckInput(int ac, char **av)
 {
     if (ac != 2 || av[1][0] == '\0')
-        return (false);
-    else if (!IsValidInput(av[1]))
         return (false);
     return (true);
 }
@@ -53,24 +30,24 @@ int main(int ac, char **av)
 {
     if (!CheckInput(ac, av))
         return ( std::cout << "Error!" << std::endl, 0);
-    std::string str(av[1]);
-    std::stringstream ss(str);
-    std::string token;
     std::stack<int> myStack;
-    while (getline(ss, token, ' ')) {
-        if (!IsStrOperator(token))
+    int i = 0;
+    std::string str(av[1]);
+    while (str[i]) {
+        if (isdigit(str[i]))
         {
-            int operand = atoi((char *)token.c_str());
-            if (operand > 9)
-            {
-                std::cout << "There is a value which greater than 9" << std::endl;
-                return 0;
-            }
+            int operand = str[i] - 48;
             myStack.push(operand);
+            // std::cout << myStack.top() << std::endl;
         }
-        else if (IsStrOperator(token) && myStack.size() > 1)
-        {
-            if (token == "*")
+        else if (IsOperator(str[i]))
+        { 
+            if (myStack.size() < 2)
+            {
+                std::cout << "invalid form" << std::endl;
+                return (1);
+            }
+            if (str[i] == '*')
             {
                 double a, b, c;
                 a = myStack.top();
@@ -79,10 +56,9 @@ int main(int ac, char **av)
                 myStack.pop();
                 c = Multiplication(b, a);
                 myStack.push(c);
-                continue;
             }
 
-            if (token == "/")
+            if (str[i] == '/')
             {
                 double a, b, c;
                 a = myStack.top();
@@ -91,10 +67,10 @@ int main(int ac, char **av)
                 myStack.pop();
                 c = Division(b, a);
                 myStack.push(c);
-                continue;
+
             }
 
-            if (token == "+")
+            if (str[i] == '+')
             {
                 double a, b, c;
                 a = myStack.top();
@@ -103,10 +79,10 @@ int main(int ac, char **av)
                 myStack.pop();
                 c = Adding(b, a);
                 myStack.push(c);
-                continue;
+
             }
 
-            if (token == "-")
+            if (str[i] == '-')
             {
                 double a, b, c;
                 a = myStack.top();
@@ -115,14 +91,14 @@ int main(int ac, char **av)
                 myStack.pop();
                 c = Substraction(b, a);
                 myStack.push(c);
-                continue;
             }
          }
-         else
+         else if(str[i] != ' ')
          {
             std::cout << "argument is not Reverse Polish Notation" << std::endl;
             return (0);
          }
+         i++;
     }
     if(myStack.size() != 1)
     {

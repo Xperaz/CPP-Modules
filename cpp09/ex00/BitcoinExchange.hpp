@@ -26,7 +26,7 @@ int                                 CheckHiphen(char *str);
 std::map<std::string, long double>  GetMapData();
 bool                                IsValidNumber(char *str);
 bool                                IsValidRate(char *str);
-bool                                IsValidDay(char *token);
+bool                                IsValidDay(char *token, std::string month);
 bool								IsValidMonth(char *token);
 bool								IsValidYear(char *token);
 

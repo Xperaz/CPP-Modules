@@ -63,17 +63,23 @@ bool  IsValidRate(char *str)
 {
     int i = 0;
     int count = 0;
+    int count2 = 0;
     while (str[i])
     {
+        if (i > 0 && str[i] == '-')
+            return (false);
         if (str[i] == ' ')
             return (false);
         if (str[i] == '.')
             count++;
+        if (str[i] == ',')
+            count2++;
         i++;
     }
-    if (count > 1)
+    
+    if (count > 1 || count2 > 1)
         return (false);
-    i =0;
+    i = 0;
     while (str[i])
     {
         if (str[i] == '.')
@@ -86,17 +92,28 @@ bool  IsValidRate(char *str)
     return (true);
 }
 
-bool IsValidDay(char *token)
+bool ValidMonthDay(int day, int mnt)
+{
+    if (mnt == 2 && day > 28)
+        return (false);
+    if (mnt % 2 == 0 && day > 30)
+        return (false);
+    return (true);
+}
+
+bool IsValidDay(char *token, std::string month)
 {
     int len = 0;
     while (token[len])
         len++;
-    if (!IsNumber(token))
+    if (!IsValidNumber(token))
         return (false);
     else if (len != 2)
         return (false);
     int val = atoi(token);
     if (val > 31 || val < 1)
+        return (false);
+    if (!ValidMonthDay(val, atoi((char *)month.c_str())))
         return (false);
     return (true);   
 }
