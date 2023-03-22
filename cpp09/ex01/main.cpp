@@ -40,7 +40,14 @@ bool CheckInput(int ac, char **av)
 double Multiplication(double a, double b){ return (a * b); }
 double Adding(double a, double b){ return (a + b); }
 double Substraction(double a, double b){ return (a - b); }
-double Division(double a, double b){ return (a / b); }
+double Division(double a, double b){
+    if (b == 0)
+    {
+        std::cout << "division by zero not allowed!!" << std::endl;
+        exit(1);
+    }
+    return (a / b); 
+    }
 
 int main(int ac, char **av)
 {
@@ -116,6 +123,11 @@ int main(int ac, char **av)
             std::cout << "argument is not Reverse Polish Notation" << std::endl;
             return (0);
          }
+    }
+    if(myStack.size() != 1)
+    {
+        std::cout << "incomplet NPR " << std::endl;
+        return (0);
     }
     std::cout << myStack.top() << std::endl;
     myStack.pop();

@@ -60,6 +60,7 @@
         "typeinfo": "cpp",
         "utility": "cpp",
         "array": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "vector": "cpp"
     }
 }
