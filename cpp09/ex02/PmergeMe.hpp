@@ -15,6 +15,8 @@ private:
     /* data */
 public:
     PmergeMe(/* args */);
+    PmergeMe(PmergeMe const &copy);
+	PmergeMe & operator=(const PmergeMe &other);
     ~PmergeMe();
 };
 

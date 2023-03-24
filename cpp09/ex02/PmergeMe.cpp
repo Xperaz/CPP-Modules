@@ -1,11 +1,28 @@
 #include "PmergeMe.hpp"
 
-PmergeMe::PmergeMe(/* args */)
+PmergeMe::PmergeMe()
 {
+    std::cout << "the construnctor goes here!" << std::endl;
+}
+
+PmergeMe::PmergeMe(const PmergeMe &copy)
+{
+    (void)copy;
+    std::cout << " copy constructor goes here!" << std::endl;
+}
+
+PmergeMe& PmergeMe::operator=(PmergeMe const &other)
+{
+    if (this != &other)
+    {
+        
+    }
+    return (*this);
 }
 
 PmergeMe::~PmergeMe()
 {
+    std::cout << "the destructor goes here!" << std::endl;
 }
 
 void print_vector(std::vector<int> &vi)
@@ -100,16 +117,16 @@ void merge_insert_sort_vector(std::vector<int>& vi)
 
 void sort_vector(int *tab, int len)
 {
+    clock_t start_time = clock();
     std::vector<int> vi;
     for (int i = 0; i < len; i++)
         vi.push_back(tab[i]);
     std::cout << "vector befor:    ";
     print_vector(vi);
-    clock_t start_time = clock();
     merge_insert_sort_vector(vi);
     clock_t end_time = clock();
     double execution_time = double(end_time - start_time); 
     std::cout << "vector after:    ";
     print_vector(vi);
-    std::cout << "vector execution time: " << execution_time / 1000 << " us." << std::endl;
+    std::cout << "\n ------------------- vector execution time: " << execution_time / 1000 << " us. ---------------\n" << std::endl;
 }

@@ -12,6 +12,8 @@ private:
     /* data */
 public:
     RPN(/* args */);
+    RPN(RPN const &copy);
+	RPN & operator=(const RPN &other);
     ~RPN();
 };
 

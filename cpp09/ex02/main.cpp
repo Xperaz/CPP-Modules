@@ -92,18 +92,18 @@ void merge_insert_sort_deque(std::deque<int>& dq)
 
 void sort_deque(int *tab, int len)
 {
+    clock_t start_time = clock();
     std::deque<int> pmerge;
     for (int i = 0; i < len; i++)
         pmerge.push_back(tab[i]);
     std::cout << "deque befor:    ";
     print_deque(pmerge);
-    clock_t start_time = clock();
     merge_insert_sort_deque(pmerge);
     clock_t end_time = clock();
     double execution_time = double(end_time - start_time); 
     std::cout << "deque after:    ";
     print_deque(pmerge);
-     std::cout << "deque execution time: " << execution_time / 1000 << " us." << std::endl;
+     std::cout << "\n ------------------- deque execution time: " << execution_time / 1000 << " us.\n" << std::endl;
 }
 
 int main(int ac, char **av)
@@ -121,9 +121,9 @@ int main(int ac, char **av)
         std::cout << "Invalid input" << std::endl;
         return (delete[] tab, 0);
     }
-    std::cout << "/*----------------- Vector -------------------" << std::endl;
+    std::cout << "\n/*----------------- Vector -------------------\n" << std::endl;
     sort_vector(tab, len);
-    std::cout << "/*----------------- Deque -------------------" << std::endl;
+    std::cout << "\n/*----------------- Deque -------------------\n" << std::endl;
     sort_deque(tab, len);
     delete[] tab;
     return(0);
